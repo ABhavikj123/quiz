@@ -1,1406 +1,1288 @@
 {
-  "title": "4-Group Quiz + Final Round",
-  "description": "Each group: Round1 (12 MCQs - mixed Arts/Commerce/Science), Round2 (4 images + 4 sounds recognition), Round3 (10 general questions). Final round follows same structure.",
-  "groups": [
-    {
-      "group_id": 1,
-      "name": "Group 1",
-      "rounds": {
-        "round1_mcq": [
-          {
-            "question": "Which art movement emphasized the depiction of light and its changing qualities, with visible brush strokes and open composition?",
-            "options": [
-              "Cubism",
-              "Impressionism",
-              "Surrealism",
-              "Romanticism"
-            ],
-            "answer": "Impressionism"
-          },
-          {
-            "question": "In accounting, which financial statement shows a company's assets, liabilities and equity at a specific date?",
-            "options": [
-              "Income Statement",
-              "Cash Flow Statement",
-              "Statement of Retained Earnings",
-              "Balance Sheet"
-            ],
-            "answer": "Balance Sheet"
-          },
-          {
-            "question": "Which organelle is the primary site of ATP production in eukaryotic cells?",
-            "options": [
-              "Ribosome",
-              "Mitochondrion",
-              "Golgi apparatus",
-              "Lysosome"
-            ],
-            "answer": "Mitochondrion"
-          },
-          {
-            "question": "In literature, 'stream of consciousness' is a narrative method most famously used by which author?",
-            "options": [
-              "Ernest Hemingway",
-              "Virginia Woolf",
-              "J.R.R. Tolkien",
-              "George Orwell"
-            ],
-            "answer": "Virginia Woolf"
-          },
-          {
-            "question": "Which market structure is characterized by many sellers, homogeneous products, and free entry and exit?",
-            "options": [
-              "Monopoly",
-              "Oligopoly",
-              "Perfect competition",
-              "Monopolistic competition"
-            ],
-            "answer": "Perfect competition"
-          },
-          {
-            "question": "Which law states that pressure applied to a confined fluid is transmitted undiminished throughout the fluid?",
-            "options": [
-              "Archimedes' principle",
-              "Pascal's law",
-              "Boyle's law",
-              "Hooke's law"
-            ],
-            "answer": "Pascal's law"
-          },
-          {
-            "question": "Which painting technique uses wet plaster and pigments that chemically bind as it dries?",
-            "options": [
-              "Tempera",
-              "Fresco",
-              "Oil on canvas",
-              "Gouache"
-            ],
-            "answer": "Fresco"
-          },
-          {
-            "question": "In managerial accounting, 'contribution margin' is best described as:",
-            "options": [
-              "Sales minus variable costs",
-              "Sales minus fixed costs",
-              "Net income after taxes",
-              "Gross profit minus operating expenses"
-            ],
-            "answer": "Sales minus variable costs"
-          },
-          {
-            "question": "Which of the following is an example of a covalent bond?",
-            "options": [
-              "Sodium chloride (NaCl)",
-              "Magnesium oxide (MgO)",
-              "Hydrogen gas (H2)",
-              "Potassium bromide (KBr)"
-            ],
-            "answer": "Hydrogen gas (H2)"
-          },
-          {
-            "question": "Which composer is known as the 'Father of the Symphony' and wrote over 100 symphonies, including many that shaped the classical era?",
-            "options": [
-              "Johann Sebastian Bach",
-              "Franz Schubert",
-              "Joseph Haydn",
-              "Ludwig van Beethoven"
-            ],
-            "answer": "Joseph Haydn"
-          },
-          {
-            "question": "Which ratio measures how many times a company's inventory is sold and replaced over a period?",
-            "options": [
-              "Current ratio",
-              "Inventory turnover ratio",
-              "Debt-to-equity ratio",
-              "Return on equity"
-            ],
-            "answer": "Inventory turnover ratio"
-          },
-          {
-            "question": "Which of the following best describes 'enthalpy' in thermodynamics?",
-            "options": [
-              "Disorder of a system",
-              "Heat content at constant pressure",
-              "Rate of heat transfer",
-              "Work done per unit time"
-            ],
-            "answer": "Heat content at constant pressure"
-          }
-        ],
-        "round2_recognition": [
-          {
-            "type": "image",
-            "url": "data:image/jpeg;base64,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",
-            "question": "Identify the bird shown in the image.",
-            "answer": "Peacock"
-          },
-          {
-            "type": "image",
-            "url": "",
-            "question": "Identify the classical musical instrument shown.",
-            "answer": "Sitar"
-          },
-          {
-            "type": "image",
-            "url": "",
-            "question": "Identify the animal shown in the image.",
-            "answer": "Red fox"
-          },
-          {
-            "type": "image",
-            "url": "",
-            "question": "Identify the famous painting shown.",
-            "answer": "The Starry Night"
-          },
-          {
-            "type": "sound",
-            "url": "./violin.mp3",
-            "question": "Identify the instrument making this sound.",
-            "answer": "Violin"
-          },
-          {
-            "type": "sound",
-            "url": "",
-            "question": "Identify the bird from its call.",
-            "answer": "Sparrow"
-          },
-          {
-            "type": "sound",
-            "url": "",
-            "question": "Identify this animal sound.",
-            "answer": "Lion roar"
-          },
-          {
-            "type": "sound",
-            "url": "",
-            "question": "Identify the percussion instrument from the audio.",
-            "answer": "Tabla"
-          }
-        ],
-        "round3_general": [
-          {
-            "question": "Which planet in our solar system has the most moons (as of standard textbook counts)?",
-            "options": [
-              "Earth",
-              "Mars",
-              "Jupiter",
-              "Venus"
-            ],
-            "answer": "Jupiter"
-          },
-          {
-            "question": "Who wrote the play 'Hamlet'?",
-            "options": [
-              "Christopher Marlowe",
-              "William Shakespeare",
-              "Ben Jonson",
-              "John Webster"
-            ],
-            "answer": "William Shakespeare"
-          },
-          {
-            "question": "What is the capital city of Japan?",
-            "options": [
-              "Tokyo",
-              "Kyoto",
-              "Osaka",
-              "Hiroshima"
-            ],
-            "answer": "Tokyo"
-          },
-          {
-            "question": "Which element has the chemical symbol 'Fe'?",
-            "options": [
-              "Fluorine",
-              "Iron",
-              "Francium",
-              "Fermium"
-            ],
-            "answer": "Iron"
-          },
-          {
-            "question": "Which year did the first man land on the Moon (Apollo 11)?",
-            "options": [
-              "1965",
-              "1969",
-              "1972",
-              "1959"
-            ],
-            "answer": "1969"
-          },
-          {
-            "question": "What is the name of the longest river in the world traditionally considered?",
-            "options": [
-              "Amazon",
-              "Nile",
-              "Yangtze",
-              "Mississippi"
-            ],
-            "answer": "Nile"
-          },
-          {
-            "question": "Which currency is used in the United Kingdom?",
-            "options": [
-              "Euro",
-              "Pound sterling",
-              "US Dollar",
-              "Swiss Franc"
-            ],
-            "answer": "Pound sterling"
-          },
-          {
-            "question": "Who painted the 'Mona Lisa'?",
-            "options": [
-              "Leonardo da Vinci",
-              "Michelangelo",
-              "Raphael",
-              "Donatello"
-            ],
-            "answer": "Leonardo da Vinci"
-          },
-          {
-            "question": "Which gas is most abundant in Earth's atmosphere?",
-            "options": [
-              "Oxygen",
-              "Carbon dioxide",
-              "Nitrogen",
-              "Argon"
-            ],
-            "answer": "Nitrogen"
-          },
-          {
-            "question": "What is the SI unit for electric current?",
-            "options": [
-              "Volt",
-              "Ohm",
-              "Ampere",
-              "Watt"
-            ],
-            "answer": "Ampere"
-          }
-        ]
-      }
-    },
-    {
-      "group_id": 2,
-      "name": "Group 2",
-      "rounds": {
-        "round1_mcq": [
-          {
-            "question": "Which art technique creates images by arranging small pieces of colored glass, stone, or other materials?",
-            "options": [
-              "Collage",
-              "Mosaic",
-              "Etching",
-              "Lithography"
-            ],
-            "answer": "Mosaic"
-          },
-          {
-            "question": "In microeconomics, the 'law of diminishing marginal utility' implies:",
-            "options": [
-              "Each additional unit of a good increases total utility indefinitely",
-              "Marginal utility decreases as more of a good is consumed",
-              "Marginal utility increases with each additional unit",
-              "Utility is unrelated to consumption amount"
-            ],
-            "answer": "Marginal utility decreases as more of a good is consumed"
-          },
-          {
-            "question": "Which scientist proposed the three laws of planetary motion?",
-            "options": [
-              "Isaac Newton",
-              "Galileo Galilei",
-              "Johannes Kepler",
-              "Nicolaus Copernicus"
-            ],
-            "answer": "Johannes Kepler"
-          },
-          {
-            "question": "Which poetic form traditionally has 14 lines and uses a specific rhyme scheme?",
-            "options": [
-              "Haiku",
-              "Free verse",
-              "Sonnet",
-              "Limerick"
-            ],
-            "answer": "Sonnet"
-          },
-          {
-            "question": "Which of the following is a primary market activity?",
-            "options": [
-              "Trading stocks on the exchange",
-              "Issuance of new shares by a company",
-              "Buying government bonds from other investors",
-              "Secondary trading of shares"
-            ],
-            "answer": "Issuance of new shares by a company"
-          },
-          {
-            "question": "Which process converts light energy into chemical energy in plants?",
-            "options": [
-              "Respiration",
-              "Fermentation",
-              "Photosynthesis",
-              "Transpiration"
-            ],
-            "answer": "Photosynthesis"
-          },
-          {
-            "question": "Which sculptural technique involves carving directly into a block of material?",
-            "options": [
-              "Modeling",
-              "Assemblage",
-              "Carving",
-              "Casting"
-            ],
-            "answer": "Carving"
-          },
-          {
-            "question": "Which accounting principle states revenue is recognized when earned and realizable?",
-            "options": [
-              "Matching principle",
-              "Revenue recognition principle",
-              "Conservatism principle",
-              "Full disclosure principle"
-            ],
-            "answer": "Revenue recognition principle"
-          },
-          {
-            "question": "Which of the following best describes an ionic bond?",
-            "options": [
-              "Sharing of electron pairs",
-              "Transfer of electrons creating charged ions",
-              "Overlapping atomic orbitals",
-              "Metallic electron pooling"
-            ],
-            "answer": "Transfer of electrons creating charged ions"
-          },
-          {
-            "question": "Which artist painted Guernica, a work protesting the horrors of war?",
-            "options": [
-              "Pablo Picasso",
-              "Salvador Dalí",
-              "Henri Matisse",
-              "Edvard Munch"
-            ],
-            "answer": "Pablo Picasso"
-          },
-          {
-            "question": "Which ratio indicates how much profit a company generates with shareholders' equity?",
-            "options": [
-              "Return on equity (ROE)",
-              "Current ratio",
-              "Gross margin",
-              "Operating margin"
-            ],
-            "answer": "Return on equity (ROE)"
-          },
-          {
-            "question": "Which law of thermodynamics states that total entropy of an isolated system can never decrease over time?",
-            "options": [
-              "Zeroth law",
-              "First law",
-              "Second law",
-              "Third law"
-            ],
-            "answer": "Second law"
-          }
-        ],
-        "round2_recognition": [
-          {
-            "type": "image",
-            "url": "",
-            "question": "Identify the flower in the image.",
-            "answer": "Lotus"
-          },
-          {
-            "type": "image",
-            "url": "",
-            "question": "Identify the musical instrument shown.",
-            "answer": "Flute"
-          },
-          {
-            "type": "image",
-            "url": "",
-            "question": "Identify the animal species shown.",
-            "answer": "Elephant"
-          },
-          {
-            "type": "image",
-            "url": "",
-            "question": "Identify the landmark/building shown.",
-            "answer": "Taj Mahal"
-          },
-          {
-            "type": "sound",
-            "url": "",
-            "question": "Identify the bird by its call.",
-            "answer": "Crow"
-          },
-          {
-            "type": "sound",
-            "url": "",
-            "question": "Identify the instrument from the audio clip.",
-            "answer": "Piano"
-          },
-          {
-            "type": "sound",
-            "url": "",
-            "question": "Identify this animal sound.",
-            "answer": "Elephant trumpet"
-          },
-          {
-            "type": "sound",
-            "url": "",
-            "question": "Identify this percussion instrument from the sound.",
-            "answer": "Cajón"
-          }
-        ],
-        "round3_general": [
-          {
-            "question": "Which country is the largest by land area?",
-            "options": [
-              "United States",
-              "China",
-              "Russia",
-              "Canada"
-            ],
-            "answer": "Russia"
-          },
-          {
-            "question": "Who discovered penicillin?",
-            "options": [
-              "Alexander Fleming",
-              "Louis Pasteur",
-              "Robert Koch",
-              "Edward Jenner"
-            ],
-            "answer": "Alexander Fleming"
-          },
-          {
-            "question": "What is H2O commonly known as?",
-            "options": [
-              "Hydrogen peroxide",
-              "Water",
-              "Ozone",
-              "Hydroxide"
-            ],
-            "answer": "Water"
-          },
-          {
-            "question": "Which language has the most native speakers worldwide?",
-            "options": [
-              "English",
-              "Spanish",
-              "Mandarin Chinese",
-              "Hindi"
-            ],
-            "answer": "Mandarin Chinese"
-          },
-          {
-            "question": "Which organ in the human body filters blood to form urine?",
-            "options": [
-              "Liver",
-              "Kidney",
-              "Pancreas",
-              "Spleen"
-            ],
-            "answer": "Kidney"
-          },
-          {
-            "question": "Which year did World War I begin?",
-            "options": [
-              "1914",
-              "1918",
-              "1939",
-              "1905"
-            ],
-            "answer": "1914"
-          },
-          {
-            "question": "Which gas do plants absorb from the atmosphere during photosynthesis?",
-            "options": [
-              "Oxygen",
-              "Nitrogen",
-              "Carbon dioxide",
-              "Hydrogen"
-            ],
-            "answer": "Carbon dioxide"
-          },
-          {
-            "question": "Who is the author of '1984'?",
-            "options": [
-              "Aldous Huxley",
-              "George Orwell",
-              "Ray Bradbury",
-              "Kurt Vonnegut"
-            ],
-            "answer": "George Orwell"
-          },
-          {
-            "question": "What is the freezing point of water in Celsius?",
-            "options": [
-              "0°C",
-              "32°C",
-              "-273°C",
-              "100°C"
-            ],
-            "answer": "0°C"
-          },
-          {
-            "question": "Which explorer is credited with circumnavigating the globe (completed by his expedition)?",
-            "options": [
-              "Christopher Columbus",
-              "Ferdinand Magellan",
-              "Vasco da Gama",
-              "Marco Polo"
-            ],
-            "answer": "Ferdinand Magellan"
-          }
-        ]
-      }
-    },
-    {
-      "group_id": 3,
-      "name": "Group 3",
-      "rounds": {
-        "round1_mcq": [
-          {
-            "question": "Which art technique uses tiny dots of color that blend in the viewer's eye when seen from a distance?",
-            "options": [
-              "Pointillism",
-              "Impressionism",
-              "Fauvism",
-              "Expressionism"
-            ],
-            "answer": "Pointillism"
-          },
-          {
-            "question": "Which financial concept represents spreading investment across different assets to reduce risk?",
-            "options": [
-              "Leverage",
-              "Diversification",
-              "Speculation",
-              "Arbitrage"
-            ],
-            "answer": "Diversification"
-          },
-          {
-            "question": "What is the name of the force that keeps planets in orbit around the Sun?",
-            "options": [
-              "Electromagnetic force",
-              "Nuclear force",
-              "Gravity",
-              "Friction"
-            ],
-            "answer": "Gravity"
-          },
-          {
-            "question": "Which literary device gives human characteristics to non-human objects?",
-            "options": [
-              "Metaphor",
-              "Alliteration",
-              "Personification",
-              "Hyperbole"
-            ],
-            "answer": "Personification"
-          },
-          {
-            "question": "Which of the following is a liability on the balance sheet?",
-            "options": [
-              "Accounts payable",
-              "Retained earnings",
-              "Inventory",
-              "Plant and equipment"
-            ],
-            "answer": "Accounts payable"
-          },
-          {
-            "question": "Which element is a noble gas?",
-            "options": [
-              "Oxygen",
-              "Chlorine",
-              "Argon",
-              "Calcium"
-            ],
-            "answer": "Argon"
-          },
-          {
-            "question": "Which modern art movement is Salvador Dalí associated with?",
-            "options": [
-              "Realism",
-              "Surrealism",
-              "Baroque",
-              "Renaissance"
-            ],
-            "answer": "Surrealism"
-          },
-          {
-            "question": "Which cost does NOT change with production volume in the short run?",
-            "options": [
-              "Raw materials",
-              "Direct labor",
-              "Fixed rent",
-              "Packaging"
-            ],
-            "answer": "Fixed rent"
-          },
-          {
-            "question": "Which process reduces the concentration of solute by adding solvent?",
-            "options": [
-              "Evaporation",
-              "Dilution",
-              "Distillation",
-              "Crystallization"
-            ],
-            "answer": "Dilution"
-          },
-          {
-            "question": "Which composer wrote the opera 'La Traviata'?",
-            "options": [
-              "Giuseppe Verdi",
-              "Wolfgang Amadeus Mozart",
-              "Richard Wagner",
-              "Giacomo Puccini"
-            ],
-            "answer": "Giuseppe Verdi"
-          },
-          {
-            "question": "Which accounting term refers to non-cash expense representing wear and tear of assets?",
-            "options": [
-              "Amortization",
-              "Depreciation",
-              "Accrual",
-              "Provision"
-            ],
-            "answer": "Depreciation"
-          },
-          {
-            "question": "Which of the following is a common example of an endothermic process?",
-            "options": [
-              "Combustion",
-              "Freezing of water",
-              "Photosynthesis",
-              "Condensation"
-            ],
-            "answer": "Photosynthesis"
-          }
-        ],
-        "round2_recognition": [
-          {
-            "type": "image",
-            "url": "",
-            "question": "Identify the instrument in the image.",
-            "answer": "Trumpet"
-          },
-          {
-            "type": "image",
-            "url": "",
-            "question": "Identify the reptile shown.",
-            "answer": "Komodo dragon"
-          },
-          {
-            "type": "image",
-            "url": "",
-            "question": "Identify the architecture style shown in the image.",
-            "answer": "Gothic"
-          },
-          {
-            "type": "image",
-            "url": "",
-            "question": "Identify the famous sculpture shown.",
-            "answer": "The Thinker"
-          },
-          {
-            "type": "sound",
-            "url": "",
-            "question": "Identify the bird by the song in the audio.",
-            "answer": "Nightingale"
-          },
-          {
-            "type": "sound",
-            "url": "",
-            "question": "Identify the musical instrument from the audio.",
-            "answer": "Guitar"
-          },
-          {
-            "type": "sound",
-            "url": "",
-            "question": "Identify the animal by its sound.",
-            "answer": "Frog croak"
-          },
-          {
-            "type": "sound",
-            "url": "",
-            "question": "Identify the wind instrument from the clip.",
-            "answer": "Clarinet"
-          }
-        ],
-        "round3_general": [
-          {
-            "question": "Which famous scientist developed the theory of relativity?",
-            "options": [
-              "Albert Einstein",
-              "Isaac Newton",
-              "Niels Bohr",
-              "Max Planck"
-            ],
-            "answer": "Albert Einstein"
-          },
-          {
-            "question": "Which continent contains the Sahara Desert?",
-            "options": [
-              "Asia",
-              "Africa",
-              "Australia",
-              "South America"
-            ],
-            "answer": "Africa"
-          },
-          {
-            "question": "What is the primary ingredient in traditional Japanese miso soup?",
-            "options": [
-              "Soybean paste",
-              "Fish sauce",
-              "Tomato paste",
-              "Vinegar"
-            ],
-            "answer": "Soybean paste"
-          },
-          {
-            "question": "Which organ pumps blood throughout the human body?",
-            "options": [
-              "Lungs",
-              "Liver",
-              "Heart",
-              "Kidney"
-            ],
-            "answer": "Heart"
-          },
-          {
-            "question": "Which country hosted the 2016 Summer Olympics?",
-            "options": [
-              "China",
-              "Brazil",
-              "United Kingdom",
-              "Russia"
-            ],
-            "answer": "Brazil"
-          },
-          {
-            "question": "Who wrote 'Pride and Prejudice'?",
-            "options": [
-              "Charlotte Brontë",
-              "Jane Austen",
-              "Mary Shelley",
-              "Emily Brontë"
-            ],
-            "answer": "Jane Austen"
-          },
-          {
-            "question": "Which element is used as the primary fuel in nuclear fission reactors?",
-            "options": [
-              "Uranium",
-              "Helium",
-              "Carbon",
-              "Lead"
-            ],
-            "answer": "Uranium"
-          },
-          {
-            "question": "Which gas is used in balloons to make them float (lighter than air)?",
-            "options": [
-              "Oxygen",
-              "Hydrogen",
-              "Helium",
-              "Nitrogen"
-            ],
-            "answer": "Helium"
-          },
-          {
-            "question": "What is the smallest prime number?",
-            "options": [
-              "0",
-              "1",
-              "2",
-              "3"
-            ],
-            "answer": "2"
-          },
-          {
-            "question": "Which device converts chemical energy into electrical energy?",
-            "options": [
-              "Motor",
-              "Battery",
-              "Transformer",
-              "Generator"
-            ],
-            "answer": "Battery"
-          }
-        ]
-      }
-    },
-    {
-      "group_id": 4,
-      "name": "Group 4",
-      "rounds": {
-        "round1_mcq": [
-          {
-            "question": "Which painting medium uses pigments mixed with egg yolk?",
-            "options": [
-              "Oil paint",
-              "Fresco",
-              "Tempera",
-              "Acrylic"
-            ],
-            "answer": "Tempera"
-          },
-          {
-            "question": "Which type of market failure occurs when third parties are affected by economic transactions (positive or negative)?",
-            "options": [
-              "Perfect competition",
-              "Externalities",
-              "Monopoly power",
-              "Asymmetric information"
-            ],
-            "answer": "Externalities"
-          },
-          {
-            "question": "Which metal is liquid at room temperature?",
-            "options": [
-              "Mercury",
-              "Gold",
-              "Iron",
-              "Aluminum"
-            ],
-            "answer": "Mercury"
-          },
-          {
-            "question": "Which dramatic form is an extended narrative told mostly through dialogue and action on stage?",
-            "options": [
-              "Poem",
-              "Novel",
-              "Play",
-              "Essay"
-            ],
-            "answer": "Play"
-          },
-          {
-            "question": "Which measure indicates the average price level change across the overall economy?",
-            "options": [
-              "GDP",
-              "Inflation rate",
-              "Unemployment rate",
-              "Trade balance"
-            ],
-            "answer": "Inflation rate"
-          },
-          {
-            "question": "Which biological molecule is primarily responsible for storing genetic information?",
-            "options": [
-              "RNA",
-              "DNA",
-              "Protein",
-              "Lipid"
-            ],
-            "answer": "DNA"
-          },
-          {
-            "question": "Which dance form originated in Argentina and is known for close embrace and dramatic style?",
-            "options": [
-              "Salsa",
-              "Tango",
-              "Waltz",
-              "Kathak"
-            ],
-            "answer": "Tango"
-          },
-          {
-            "question": "In finance, what does 'liquidity' refer to?",
-            "options": [
-              "Profitability of a company",
-              "Ability to meet short-term obligations / convert assets to cash",
-              "Long-term solvency",
-              "Market share"
-            ],
-            "answer": "Ability to meet short-term obligations / convert assets to cash"
-          },
-          {
-            "question": "Which process involves bacteria converting atmospheric nitrogen into forms plants can use?",
-            "options": [
-              "Nitrification",
-              "Nitrogen fixation",
-              "Denitrification",
-              "Ammonification"
-            ],
-            "answer": "Nitrogen fixation"
-          },
-          {
-            "question": "Which artist is known for the painting style called 'drip painting'?",
-            "options": [
-              "Pablo Picasso",
-              "Jackson Pollock",
-              "Claude Monet",
-              "Gustav Klimt"
-            ],
-            "answer": "Jackson Pollock"
-          },
-          {
-            "question": "Which financial document shows company revenues and expenses over a period?",
-            "options": [
-              "Balance Sheet",
-              "Income Statement (Profit & Loss)",
-              "Statement of Cash Flows",
-              "Statement of Financial Position"
-            ],
-            "answer": "Income Statement (Profit & Loss)"
-          },
-          {
-            "question": "Which physical quantity measures the resistance of an object to changes in its state of motion?",
-            "options": [
-              "Force",
-              "Mass",
-              "Momentum",
-              "Energy"
-            ],
-            "answer": "Mass"
-          }
-        ],
-        "round2_recognition": [
-          {
-            "type": "image",
-            "url": "",
-            "question": "Identify the bird species in the image.",
-            "answer": "Kingfisher"
-          },
-          {
-            "type": "image",
-            "url": "",
-            "question": "Identify the traditional musical instrument shown.",
-            "answer": "Dholak"
-          },
-          {
-            "type": "image",
-            "url": "",
-            "question": "Identify the big cat shown in the image.",
-            "answer": "Tiger"
-          },
-          {
-            "type": "image",
-            "url": "",
-            "question": "Identify the historical monument pictured.",
-            "answer": "Colosseum"
-          },
-          {
-            "type": "sound",
-            "url": "",
-            "question": "Identify the instrument from the audio sample.",
-            "answer": "Saxophone"
-          },
-          {
-            "type": "sound",
-            "url": "",
-            "question": "Identify the bird by its call.",
-            "answer": "Cuckoo"
-          },
-          {
-            "type": "sound",
-            "url": "",
-            "question": "Identify the animal from its sound clip.",
-            "answer": "Wolf howl"
-          },
-          {
-            "type": "sound",
-            "url": "",
-            "question": "Identify the string instrument heard in the sample.",
-            "answer": "Cello"
-          }
-        ],
-        "round3_general": [
-          {
-            "question": "Which country invented paper?",
-            "options": [
-              "China",
-              "Egypt",
-              "Greece",
-              "India"
-            ],
-            "answer": "China"
-          },
-          {
-            "question": "Which is the largest internal organ in the human body?",
-            "options": [
-              "Liver",
-              "Heart",
-              "Lungs",
-              "Brain"
-            ],
-            "answer": "Liver"
-          },
-          {
-            "question": "Which currency is used in Japan?",
-            "options": [
-              "Yen",
-              "Won",
-              "Dollar",
-              "Ruble"
-            ],
-            "answer": "Yen"
-          },
-          {
-            "question": "Who was the first female Prime Minister of the United Kingdom?",
-            "options": [
-              "Theresa May",
-              "Margaret Thatcher",
-              "Angela Merkel",
-              "Indira Gandhi"
-            ],
-            "answer": "Margaret Thatcher"
-          },
-          {
-            "question": "What is the chemical formula for table salt?",
-            "options": [
-              "NaCl",
-              "KCl",
-              "Na2SO4",
-              "CaCl2"
-            ],
-            "answer": "NaCl"
-          },
-          {
-            "question": "Which organ is primarily responsible for digestion and absorption of nutrients?",
-            "options": [
-              "Stomach",
-              "Small intestine",
-              "Large intestine",
-              "Esophagus"
-            ],
-            "answer": "Small intestine"
-          },
-          {
-            "question": "Which planet is known as the Red Planet?",
-            "options": [
-              "Mercury",
-              "Mars",
-              "Jupiter",
-              "Saturn"
-            ],
-            "answer": "Mars"
-          },
-          {
-            "question": "Who invented the telephone?",
-            "options": [
-              "Alexander Graham Bell",
-              "Thomas Edison",
-              "Guglielmo Marconi",
-              "Nikola Tesla"
-            ],
-            "answer": "Alexander Graham Bell"
-          },
-          {
-            "question": "Which natural phenomenon causes rainbows?",
-            "options": [
-              "Reflection only",
-              "Refraction and dispersion of light through water droplets",
-              "Diffraction",
-              "Absorption of light"
-            ],
-            "answer": "Refraction and dispersion of light through water droplets"
-          },
-          {
-            "question": "Which continent is New Zealand part of?",
-            "options": [
-              "Australia (Oceania)",
-              "Asia",
-              "South America",
-              "Europe"
-            ],
-            "answer": "Australia (Oceania)"
-          }
-        ]
-      }
-    },
-    {
-      "group_id": 5,
-      "name": "Final Round",
-      "rounds": {
-        "round1_mcq": [
-          {
-            "question": "Which philosophical movement emphasized reason, science and individualism over tradition, prominent in 17th-18th century Europe?",
-            "options": [
-              "Romanticism",
-              "The Enlightenment",
-              "Existentialism",
-              "Realism"
-            ],
-            "answer": "The Enlightenment"
-          },
-          {
-            "question": "In finance, what is meant by the 'time value of money'?",
-            "options": [
-              "Money loses value over time due to inflation only",
-              "A rupee today is worth more than a rupee tomorrow because of its potential earning capacity",
-              "Money in a savings account is always risk-free",
-              "Money's value remains constant over time"
-            ],
-            "answer": "A rupee today is worth more than a rupee tomorrow because of its potential earning capacity"
-          },
-          {
-            "question": "Which subatomic particle determines the chemical identity of an element?",
-            "options": [
-              "Neutron",
-              "Proton",
-              "Electron",
-              "Photon"
-            ],
-            "answer": "Proton"
-          },
-          {
-            "question": "Which narrative perspective uses 'I' and is told from a character's point of view?",
-            "options": [
-              "Third-person omniscient",
-              "Second-person",
-              "First-person",
-              "Third-person limited"
-            ],
-            "answer": "First-person"
-          },
-          {
-            "question": "Which market structure has a single seller dominating the market with high barriers to entry?",
-            "options": [
-              "Monopoly",
-              "Oligopoly",
-              "Perfect competition",
-              "Monopolistic competition"
-            ],
-            "answer": "Monopoly"
-          },
-          {
-            "question": "Which reaction type releases energy and increases the temperature of its surroundings?",
-            "options": [
-              "Endothermic",
-              "Isothermal",
-              "Exothermic",
-              "Adiabatic"
-            ],
-            "answer": "Exothermic"
-          },
-          {
-            "question": "Who is credited with the theory of natural selection?",
-            "options": [
-              "Gregor Mendel",
-              "Charles Darwin",
-              "Jean-Baptiste Lamarck",
-              "Alfred Wallace"
-            ],
-            "answer": "Charles Darwin"
-          },
-          {
-            "question": "Which poetic meter consists of five pairs of unstressed-stressed syllables (iambic pentameter)?",
-            "options": [
-              "Trochaic tetrameter",
-              "Iambic pentameter",
-              "Dactylic hexameter",
-              "Anapestic trimeter"
-            ],
-            "answer": "Iambic pentameter"
-          },
-          {
-            "question": "Which financial instrument represents ownership in a company?",
-            "options": [
-              "Bond",
-              "Share (stock)",
-              "Option",
-              "Futures contract"
-            ],
-            "answer": "Share (stock)"
-          },
-          {
-            "question": "Which law relates force, mass, and acceleration (F = m * a)?",
-            "options": [
-              "Newton's Second Law",
-              "Newton's First Law",
-              "Newton's Third Law",
-              "Hooke's Law"
-            ],
-            "answer": "Newton's Second Law"
-          },
-          {
-            "question": "Which artist is famous for developing Cubism with Georges Braque?",
-            "options": [
-              "Piet Mondrian",
-              "Henri Matisse",
-              "Pablo Picasso",
-              "Paul Cezanne"
-            ],
-            "answer": "Pablo Picasso"
-          },
-          {
-            "question": "Which macroeconomic metric measures the total monetary value of all finished goods and services produced in a country during a specific period?",
-            "options": [
-              "Inflation rate",
-              "Balance of trade",
-              "Gross Domestic Product (GDP)",
-              "Consumer Price Index (CPI)"
-            ],
-            "answer": "Gross Domestic Product (GDP)"
-          }
-        ],
-        "round2_recognition": [
-          {
-            "type": "image",
-            "url": "",
-            "question": "Identify the classical string instrument shown in the image.",
-            "answer": "Harp"
-          },
-          {
-            "type": "image",
-            "url": "",
-            "question": "Identify the bird species from the photo.",
-            "answer": "Flamingo"
-          },
-          {
-            "type": "image",
-            "url": "",
-            "question": "Identify the historical painting displayed.",
-            "answer": "The Last Supper"
-          },
-          {
-            "type": "image",
-            "url": "",
-            "question": "Identify the animal shown.",
-            "answer": "Giraffe"
-          },
-          {
-            "type": "sound",
-            "url": "",
-            "question": "Identify the instrument from this audio clip.",
-            "answer": "Harp"
-          },
-          {
-            "type": "sound",
-            "url": "",
-            "question": "Identify the bird by its distinctive call.",
-            "answer": "Peacock"
-          },
-          {
-            "type": "sound",
-            "url": "",
-            "question": "Identify the animal sound in the clip.",
-            "answer": "Elephant trumpet"
-          },
-          {
-            "type": "sound",
-            "url": "",
-            "question": "Identify the wind instrument heard in the recording.",
-            "answer": "Oboe"
-          }
-        ],
-        "round3_general": [
-          {
-            "question": "Which treaty ended World War I?",
-            "options": [
-              "Treaty of Paris (1783)",
-              "Treaty of Versailles (1919)",
-              "Treaty of Tordesillas",
-              "Treaty of Ghent"
-            ],
-            "answer": "Treaty of Versailles (1919)"
-          },
-          {
-            "question": "Which is the chemical symbol for gold?",
-            "options": [
-              "Gd",
-              "Au",
-              "Ag",
-              "Go"
-            ],
-            "answer": "Au"
-          },
-          {
-            "question": "Who is the author of 'To Kill a Mockingbird'?",
-            "options": [
-              "Harper Lee",
-              "Truman Capote",
-              "F. Scott Fitzgerald",
-              "Ernest Hemingway"
-            ],
-            "answer": "Harper Lee"
-          },
-          {
-            "question": "Which organelle is responsible for protein synthesis?",
-            "options": [
-              "Ribosome",
-              "Mitochondrion",
-              "Nucleus",
-              "Endoplasmic reticulum"
-            ],
-            "answer": "Ribosome"
-          },
-          {
-            "question": "Which mountain is the highest above sea level?",
-            "options": [
-              "K2",
-              "Kangchenjunga",
-              "Mount Everest",
-              "Lhotse"
-            ],
-            "answer": "Mount Everest"
-          },
-          {
-            "question": "Which movement is associated with Claude Monet?",
-            "options": [
-              "Surrealism",
-              "Cubism",
-              "Impressionism",
-              "Baroque"
-            ],
-            "answer": "Impressionism"
-          },
-          {
-            "question": "Which scientist is best known for the laws of motion?",
-            "options": [
-              "Albert Einstein",
-              "Isaac Newton",
-              "Galileo Galilei",
-              "James Clerk Maxwell"
-            ],
-            "answer": "Isaac Newton"
-          },
-          {
-            "question": "Which island country is located southeast of Africa and is known for its unique biodiversity?",
-            "options": [
-              "Madagascar",
-              "Sri Lanka",
-              "Iceland",
-              "Cuba"
-            ],
-            "answer": "Madagascar"
-          },
-          {
-            "question": "Which device measures atmospheric pressure?",
-            "options": [
-              "Thermometer",
-              "Barometer",
-              "Anemometer",
-              "Hygrometer"
-            ],
-            "answer": "Barometer"
-          },
-          {
-            "question": "Which painting is Leonardo da Vinci famous for creating?",
-            "options": [
-              "The Scream",
-              "Girl with a Pearl Earring",
-              "Mona Lisa",
-              "The Persistence of Memory"
-            ],
-            "answer": "Mona Lisa"
-          }
-        ]
-      }
-    }
-  ]
+    "groups": [
+        {
+            "group_number": 1,
+            "rounds": [
+                {
+                    "round_number": 1,
+                    "type": "MCQ",
+                    "sections": [
+                        {
+                            "section": "Science",
+                            "questions": [
+                                {
+                                    "question": "A strong magnet is dropped through a long vertical copper pipe. Explain the reason for its slow fall. / एक शक्तिशाली चुम्बक को लंबी तांबे की पाइप से गिराया जाता है। उसके धीमे गिरने का कारण बताइए।",
+                                    "options": [
+                                        "A) Magnetic buoyancy / चुंबकीय उछाल",
+                                        "B) Eddy currents producing opposing field / विरोधी क्षेत्र का उत्पादन करने वाली भंवर धाराएं",
+                                        "C) Air resistance only / केवल वायु प्रतिरोध",
+                                        "D) Reduced gravity / गुरुत्वाकर्षण में कमी"
+                                    ],
+                                    "answer": "B) Eddy currents producing opposing field / विरोधी क्षेत्र का उत्पादन करने वाली भंवर धाराएं (Lenz’s law; eddy currents oppose motion)"
+                                },
+                                {
+                                    "question": "Which of the following does not conduct electricity? / इनमेंसेकौन विद्युत प्रिावित नहीं करता?",
+                                    "options": [
+                                        "A) Tap water / नल का पानी",
+                                        "B) Lemon juice / नींबू का रस",
+                                        "C) Sugar solution / चीनी का घोल",
+                                        "D) Hydrochloric acid / हाइड्रोक्लोरिक एसिड"
+                                    ],
+                                    "answer": "C) Sugar solution / चीनी का घोल"
+                                },
+                                {
+                                    "question": "The genetic material in Retroviruses is –/रेट्रोवायरस में आनुवंशिक पदार्थ क्या होता है?",
+                                    "options": [
+                                        "A) DNA / डीएनए",
+                                        "B) dsRNA/ डबल स्ट्रैण्डेड आरएनए",
+                                        "C) ssRNA/ सिंगल-स्ट्रैण्डेड आरएनए",
+                                        "D) Protein/ प्रोटीन"
+                                    ],
+                                    "answer": "C) ssRNA/ सिंगल-स्ट्रैण्डेड आरएनए"
+                                },
+                                {
+                                    "question": "What is formed when calcium oxide reacts with water/ कैल्शियम ऑक्साइड पानी के साथ प्रतिक्रिया करने पर क्या बनता है ?",
+                                    "options": [
+                                        "A) Calcium hydroxide / कैल्शियम हाइड्रॉक्साइड",
+                                        "B) Calcium carbonate / कैल्सियम कार्बोनेट",
+                                        "C) Slaked lime / बुझा हुआ चूना",
+                                        "D) Both A and C / A और C दोनों"
+                                    ],
+                                    "answer": "D) Both A and C / A और C दोनों"
+                                }
+                            ]
+                        },
+                        {
+                            "section": "Commerce",
+                            "questions": [
+                                {
+                                    "question": "What is the primary objective of business? / व्यवसाय का मुख्य उद्देश्य क्या है?",
+                                    "options": [
+                                        "A) Employment generation / रोजगार सृजन",
+                                        "B) Profit earning / लाभ अर्जित करना",
+                                        "C) Social welfare / सामाजिक कल्याण",
+                                        "D) Innovation / नवाचार"
+                                    ],
+                                    "answer": "B) Profit earning / लाभ अर्जित करना"
+                                },
+                                {
+                                    "question": "Which of the following is a part of e-commerce? / निम्नलिखित में से कौन ई-कॉमर्स का हिस्सा है?",
+                                    "options": [
+                                        "A) Online shopping / ऑनलाइन खरीदारी",
+                                        "B) ATM services / एटीएम सेवाएँ",
+                                        "C) Telecommunication / दूरसंचार",
+                                        "D) Transport services / परिवहन सेवाएँ"
+                                    ],
+                                    "answer": "A) Online shopping / ऑनलाइन खरीदारी"
+                                },
+                                {
+                                    "question": "Accounting is based on which concept? / लेखांकन किस सिद्धांत पर आधारित होता है?",
+                                    "options": [
+                                        "A) Business Entity Concept / व्यवसाय इकाई सिद्धांत",
+                                        "B) Cost Concept / लागत सिद्धांत",
+                                        "C) Matching Concept / मिलान सिद्धांत",
+                                        "D) All of the above / उपरोक्त सभी"
+                                    ],
+                                    "answer": "D) All of the above / उपरोक्त सभी"
+                                },
+                                {
+                                    "question": "Who is the father of modern economics? / आधुनिक अर्थशास्त्र के जनक कौन हैं?",
+                                    "options": [
+                                        "A) Adam Smith / एडम स्मिथ",
+                                        "B) Karl Marx / कार्ल मार्क्स",
+                                        "C) Amartya Sen / अमर्त्य सेन",
+                                        "D) John Keynes / जॉन केन्स"
+                                    ],
+                                    "answer": "A) Adam Smith / एडम स्मिथ"
+                                }
+                            ]
+                        },
+                        {
+                            "section": "Arts",
+                            "questions": [
+                                {
+                                    "question": "Who was the only woman ruler of Delhi Sultanate? | दिल्ली सल्तनत की एकमात्र महिला शासक कौन थीं?",
+                                    "options": [
+                                        "A) Razia Sultan | रज़िया सुल्तान",
+                                        "B) Chand Bibi | चाँद बीबी",
+                                        "C) Noor Jahan | नूरजहाँ",
+                                        "D) Rani Durgavati | रानी दुर्गावती"
+                                    ],
+                                    "answer": "A) Razia Sultan | रज़िया सुल्तान"
+                                },
+                                {
+                                    "question": "The first state to introduce Panchayati Raj (1959) was? | पंचायती राज (1959) को सबसे पहले किस राज्य में लागू किया गया था?",
+                                    "options": [
+                                        "A) Rajasthan | राजस्थान",
+                                        "B) Bihar | बिहार",
+                                        "C) Gujarat | गुजरात",
+                                        "D) Uttar Pradesh | उत्तर प्रदेश"
+                                    ],
+                                    "answer": "A) Rajasthan | राजस्थान"
+                                },
+                                {
+                                    "question": "During the revolt of 1857, which Rajput state supported the British strongly / 1857 के विद्रोह के दौरान राजपूत राज्य ने अंग्रेजों का पुरजोर समर्थन किया ?",
+                                    "options": [
+                                        "A) Mewar | मेवाड़",
+                                        "B) Marwar | मारवाड़",
+                                        "C) Kishangarh | किशनगढ़",
+                                        "D) Jaipur | जयपुर"
+                                    ],
+                                    "answer": "D) Jaipur | जयपुर"
+                                },
+                                {
+                                    "question": "Dr. Ambedkar called which Article as the ‘heart and soul of the Constitution’/ डॉ. अम्बेडकर ने किस अनुच्छेद को 'संविधान का दिल और आत्मा' कहा है?",
+                                    "options": [
+                                        "A) Article 32 | आर्टिकल32",
+                                        "B) Article 370 | आर्टिकल 370",
+                                        "C) Article 21 | आर्टिकल 21",
+                                        "D) Article 14 | आर्टिकल 14"
+                                    ],
+                                    "answer": "A) Article 32 | आर्टिकल32"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "round_number": 2,
+                    "type": "Recognition",
+                    "sections": [
+                        {
+                            "section": "Image",
+                            "questions": [
+                                {
+                                    "question": "Identify (इसे पहचानें)",
+                                    "media_type": "image",
+                                    "media_link": "./image/flower.webp",
+                                    "answer": "Rafflesia flower / (रैफ्लेसिया फूल)"
+                                },
+                                {
+                                    "question": "Name this internal human body part, and where it is placed? / मानव शरीर के इस आंतरिक अंग का नाम बताइए और यह कहाँ स्थित है?",
+                                    "media_type": "image",
+                                    "media_link": "./image/cochlearear.webp",
+                                    "answer": "Cochlear Human ear/ (कर्णावर्त मानव कान)"
+                                },
+                                {
+                                    "question": "The film \"San Ge Sha Gua\" has been one of the big hits in Chinese cities in 2011. By which name do we know this film in India? / फिल्म \"सान गे शा गुआ\" 2011 में चीनी शहरों में बड़ी हिट फिल्मों में से एक रही है। भारत में हम इस फिल्म को किस नाम से जानते हैं?",
+                                    "media_type": "image",
+                                    "media_link": "./image/idiots.webp",
+                                    "answer": "3 Idiots / (3 इडियट्स)"
+                                },
+                                {
+                                    "question": "Identify this dance form(इस नृत्य शैली को पहचानें)",
+                                    "media_type": "image",
+                                    "media_link": "./image/kalaripayattu.webp",
+                                    "answer": "Kalaripayattu, Kerala/ (कलारीपयट्टू, केरल)"
+                                }
+                            ]
+                        },
+                        {
+                            "section": "Audio",
+                            "questions": [
+                                {
+                                    "question": "Identify the singer. (गायक/गायिका की पहचान करें।)",
+                                    "media_type": "audio",
+                                    "media_link": "./audio/shakira.mpeg",
+                                    "answer": "Shakira (शकीरा)"
+                                },
+                                {
+                                    "question": "Identify the singer.(गायक/गायिका की पहचान करें।)",
+                                    "media_type": "audio",
+                                    "media_link": "./audio/justh.mpeg",
+                                    "answer": "Justh (जस्टh)"
+                                },
+                                {
+                                    "question": "Identify the musical instrument.(वाद्य यंत्र की पहचान करें।)",
+                                    "media_type": "audio",
+                                    "media_link": "./audio/harmonium.mpeg",
+                                    "answer": "Harmonium (हारमोनियम)"
+                                },
+                                {
+                                    "question": "Identify the famous personality.(प्रसिद्ध व्यक्तित्व की पहचान करें।)",
+                                    "media_type": "audio",
+                                    "media_link": "./image/amit.mpeg",
+                                    "answer": "Amit Shah (अमित शाह)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "round_number": 3,
+                    "type": "General Knowledge",
+                    "sections": [
+                        {
+                            "section": "General",
+                            "questions": [
+                                {
+                                    "question": "Which city was declared India's first 'AI City' in early 2025? / किस शहर को 2025 की शुरुआत में भारत का पहला 'AI शहर' घोषित किया गया?",
+                                    "options": [
+                                        "A) Bengaluru / बेंगलुरु",
+                                        "B) Hyderabad / हैदराबाद",
+                                        "C) Lucknow / लखनऊ",
+                                        "D) Pune / पुणे"
+                                    ],
+                                    "answer": "C) Lucknow / लखनऊ"
+                                },
+                                {
+                                    "question": "India launched 'Operation Samudra Maitri' to provide humanitarian aid to which cyclone-hit country in 2025? / भारत ने 2025 में किस चक्रवात प्रभावित देश को मानवीय सहायता प्रदान करने के लिए 'ऑपरेशन समुद्र मैत्री' शुरू किया?",
+                                    "options": [
+                                        "A) Bangladesh / बांग्लादेश",
+                                        "B) Myanmar / म्यांमार",
+                                        "C) Sri Lanka / श्रीलंका",
+                                        "D) Indonesia / इंडोनेशिया"
+                                    ],
+                                    "answer": "B) Myanmar / म्यांमार"
+                                },
+                                {
+                                    "question": "What is the name of the new digital health card launched by the Government of India in 2025? / 2025 में भारत सरकार द्वारा लॉन्च किए गए नए डिजिटल स्वास्थ्य कार्ड का नाम क्या है?",
+                                    "options": [
+                                        "A) Swasthya Suraksha Card / स्वास्थ्य सुरक्षा कार्ड",
+                                        "B) Digital Health ID / डिजिटल हेल्थ आईडी",
+                                        "C) National Health Card / राष्ट्रीय स्वास्थ्य कार्ड",
+                                        "D) Ayushman Bharat Digital Health Account (ABHA) Card 2.0 / आयुष्मान भारत डिजिटल हेल्थ अकाउंट (ABHA) कार्ड 2.0"
+                                    ],
+                                    "answer": "D) Ayushman Bharat Digital Health Account (ABHA) Card 2.0 / आयुष्मान भारत डिजिटल हेल्थ अकाउंट (ABHA) कार्ड 2.0"
+                                },
+                                {
+                                    "question": "The Chenab Rail Bridge, the world's highest railway bridge, was fully operationalized in which state/UT in 2025? / दुनिया का सबसे ऊंचा रेलवे पुल, चिनाब रेल ब्रिज, 2025 में किस राज्य/केंद्र शासित प्रदेश में पूरी तरह से चालू हो गया?",
+                                    "options": [
+                                        "A) Himachal Pradesh / हिमाचल प्रदेश",
+                                        "B) Jammu and Kashmir / जम्मू और कश्मीर",
+                                        "C) Uttarakhand / उत्तराखंड",
+                                        "D) Arunachal Pradesh / अरुणाचल प्रदेश"
+                                    ],
+                                    "answer": "B) Jammu and Kashmir / जम्मू और कश्मीर"
+                                },
+                                {
+                                    "question": "Who was appointed as the new Chief of the Defence Staff (CDS) of India in late 2024? / 2024 के अंत में भारत के नए चीफ ऑफ डिफेंस स्टाफ (CDS) के रूप में किसे नियुक्त किया गया?",
+                                    "options": [
+                                        "A) General M. M. Naravane / जनरल एम. एम. नरवणे",
+                                        "B) Air Chief Marshal RKS Bhadauria / एयर चीफ मार्शल आरकेएस भदौरिया",
+                                        "C) General Upendra Dwivedi / जनरल उपेंद्र द्विवेदी",
+                                        "D) Admiral R. Hari Kumar / एडमिरल आर. हरि कुमार"
+                                    ],
+                                    "answer": "C) General Upendra Dwivedi / जनरल उपेंद्र द्विवेदी"
+                                },
+                                {
+                                    "question": "Which state won the top position in the NITI Aayog's Export Preparedness Index 2025? / नीति आयोग के निर्यात तैयारी सूचकांक 2025 में किस राज्य ने शीर्ष स्थान हासिल किया?",
+                                    "options": [
+                                        "A) Maharashtra / महाराष्ट्र",
+                                        "B) Tamil Nadu / तमिलनाडु",
+                                        "C) Karnataka / कर्नाटक",
+                                        "D) Gujarat / गुजरात"
+                                    ],
+                                    "answer": "D) Gujarat / गुजरात"
+                                },
+                                {
+                                    "question": "The 76th Republic Day parade theme in 2025 was? / 2025 में 76वें गणतंत्र दिवस परेड का विषय क्या था?",
+                                    "options": [
+                                        "A) 'Atmanirbhar Bharat' / 'आत्मनिर्भर भारत'",
+                                        "B) 'Viksit Bharat: Sashakt Nari' / 'विकसित भारत: सशक्त नारी'",
+                                        "C) 'India: Mother of Democracy' / 'भारत: लोकतंत्र की जननी'",
+                                        "D) 'Digital India' / 'डिजिटल इंडिया'"
+                                    ],
+                                    "answer": "B) 'Viksit Bharat: Sashakt Nari' / 'विकसित भारत: सशक्त नारी'"
+                                },
+                                {
+                                    "question": "Which country hosted the G7 Summit in June 2025? / जून 2025 में G7 शिखर सम्मेलन की मेजबानी किस देश ने की?",
+                                    "options": [
+                                        "A) Germany / जर्मनी",
+                                        "B) Italy / इटली",
+                                        "C) Canada / कनाडा",
+                                        "D) Japan / जापान"
+                                    ],
+                                    "answer": "C) Canada / कनाडा"
+                                },
+                                {
+                                    "question": "The UN Climate Change Conference (COP30) in 2025 was held in which Brazilian city? / 2025 में संयुक्त राष्ट्र जलवायु परिवर्तन सम्मेलन (COP30) किस ब्राज़ीलियाई शहर में आयोजित किया गया?",
+                                    "options": [
+                                        "A) Rio de Janeiro / रियो डी जनेरियो",
+                                        "B) Belém / बेलेम",
+                                        "C) São Paulo / साओ पाउलो",
+                                        "D) Brasília / ब्रासीलिया"
+                                    ],
+                                    "answer": "B) Belém / बेलेम"
+                                },
+                                {
+                                    "question": "Who won the United Kingdom's general election held in late 2024? / 2024 के अंत में हुए यूनाइटेड किंगडम के आम चुनाव में कौन जीता?",
+                                    "options": [
+                                        "A) The Conservative Party / कंजर्वेटिव पार्टी",
+                                        "B) The Labour Party / लेबर पार्टी",
+                                        "C) The Liberal Democrats / लिबरल डेमोक्रेट्स",
+                                        "D) The Green Party / ग्रीन पार्टी"
+                                    ],
+                                    "answer": "B) The Labour Party / लेबर पार्टी"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "group_number": 2,
+            "rounds": [
+                {
+                    "round_number": 1,
+                    "type": "MCQ",
+                    "sections": [
+                        {
+                            "section": "Science",
+                            "questions": [
+                                {
+                                    "question": "A thin film of oil on water shows brilliant colours in sunlight. Which phenomenon is responsible and why does colour change with viewing angle? / पानी पर तेल की पतली परत धूप में चमकीले रंग क्यों दिखाती है और कोण बदलने पर रंग क्यों बदलते हैं?",
+                                    "options": [
+                                        "A) Diffraction / विवर्तन",
+                                        "B) Interference of reflected light / परावर्तित प्रकाश का हस्तक्षेप",
+                                        "C) Dispersion / परिक्षेपण",
+                                        "D) Scattering / प्रकीर्णन"
+                                    ],
+                                    "answer": "B) Interference of reflected light / परावर्तित प्रकाश का हस्तक्षेप (path difference varies with angle)"
+                                },
+                                {
+                                    "question": "A beam of electrons and a beam of protons have the same de Broglie wavelength. Which has higher kinetic energy? / इलेक्ट्रॉनों और प्रोटॉनों की किरणों की डी-ब्रॉगली तरंगदैर्घ्य समान है। किसकी गतिज ऊर्जा अधिक होगी?",
+                                    "options": [
+                                        "A) Electrons / इलेक्ट्रॉनों",
+                                        "B) Protons / प्रोटॉन",
+                                        "C) Same / वही",
+                                        "D) Depends on potential / क्षमता पर निर्भर करता है"
+                                    ],
+                                    "answer": "A) Electrons / इलेक्ट्रॉनों (KE ∝ 1/m for same λ)"
+                                },
+                                {
+                                    "question": "What is the chemical formula of washing soda? / वाशिंग सोडा का रासायनिक सूत्र क्या है?",
+                                    "options": [
+                                        "A) NaCl",
+                                        "B) NaHCO₃",
+                                        "C) Na2CO·10H2O",
+                                        "D) CaCO₃"
+                                    ],
+                                    "answer": "C) Na2CO·10H2O"
+                                },
+                                {
+                                    "question": "Which of the following is a connecting link between Annelida and Arthropoda? / निम्न में से कौन एनिलिडा और आर्थ्रोपोडा के बीच संयोजक कड़ी है?",
+                                    "options": [
+                                        "A) Peripatus/ पेरिपेटस",
+                                        "B) Balanoglossus/ बैलैनोग्लॉसस",
+                                        "C) Neopilina/ नियोपिलिना",
+                                        "D) Limulus/ लिमुलस"
+                                    ],
+                                    "answer": "A) Peripatus / पेरिपेटस"
+                                }
+                            ]
+                        },
+                        {
+                            "section": "Commerce",
+                            "questions": [
+                                {
+                                    "question": "Partnership is governed by which Act in India? / भारत में साझेदारी किस अधिनियम द्वारा शासित होती है?",
+                                    "options": [
+                                        "A) Companies Act, 2013 / कंपनियाँ अधिनियम, 2013",
+                                        "B) Partnership Act, 1932 / साझेदारी अधिनियम, 1932",
+                                        "C) Contract Act, 1872 / अनुबंध अधिनियम, 1872",
+                                        "D) Income Tax Act / आयकर अधिनियम"
+                                    ],
+                                    "answer": "B) Partnership Act, 1932 / साझेदारी अधिनियम, 1932"
+                                },
+                                {
+                                    "question": "Which one is a current asset? / निम्नलिखित में से कौन एक चालू संपत्ति है?",
+                                    "options": [
+                                        "A) Land / भूमि",
+                                        "B) Building / भवन",
+                                        "C) Debtors / देनदार",
+                                        "D) Machinery / मशीनरी"
+                                    ],
+                                    "answer": "C) Debtors / देनदार"
+                                },
+                                {
+                                    "question": "Goods are always purchased for the purpose of — / सामान हमेशा किस उद्देश्य से खरीदा जाता है?",
+                                    "options": [
+                                        "A) Use / उपयोग के लिए",
+                                        "B) Sale / बिक्री के लिए",
+                                        "C) Gifting / उपहार देने के लिए",
+                                        "D) Consumption / उपभोग के लिए"
+                                    ],
+                                    "answer": "B) Sale / बिक्री के लिए"
+                                },
+                                {
+                                    "question": "The main source of government income is — / सरकार की आय का मुख्य स्रोत है —",
+                                    "options": [
+                                        "A) Donations / दान",
+                                        "B) Foreign aid / विदेशी सहायता",
+                                        "C) Taxes / कर",
+                                        "D) Loan / ऋण"
+                                    ],
+                                    "answer": "C) Taxes / कर"
+                                }
+                            ]
+                        },
+                        {
+                            "section": "Arts",
+                            "questions": [
+                                {
+                                    "question": "Which river is called the ‘Sorrow of Rajasthan’ / किस नदी को 'राजस्थान का शोक' कहा जाता है?",
+                                    "options": [
+                                        "A) Chambal / चंबल",
+                                        "B) Luni / लूनी",
+                                        "C) Banas / बनास",
+                                        "D) Mahi / माही"
+                                    ],
+                                    "answer": "B) Luni / लूनी"
+                                },
+                                {
+                                    "question": "Who wrote the book ‘Discovery of India’/ 'Discovery of India' पुस्तक किसने लिखी?",
+                                    "options": [
+                                        "A) Mahatma Gandhi / महात्मा गांधी",
+                                        "B) Jawaharlal Nehru / जवाहरलाल नेहरू",
+                                        "C) Rabindranath Tagore / रवींद्रनाथ टैगोर",
+                                        "D) Bal Gangadhar Tilak / बाल गंगाधर तिलक"
+                                    ],
+                                    "answer": "B) Jawaharlal Nehru / जवाहरलाल नेहरू"
+                                },
+                                {
+                                    "question": "The Indira Gandhi Canal mainly benefits which region of Rajasthan? / इंदिरा गांधी नहर मुख्यतः राजस्थान के किस क्षेत्र को लाभ पहुँचाती है?",
+                                    "options": [
+                                        "A) Marwar | मारवाड़",
+                                        "B) Shekhawati | शेखावाटी",
+                                        "C) North-West Desert | उत्तर-पश्चिम मरुस्थल",
+                                        "D) Mewar | मेवाड़"
+                                    ],
+                                    "answer": "C) North-West Desert | उत्तर-पश्चिम मरुस्थल"
+                                },
+                                {
+                                    "question": "Famous Ajanta Caves are primarily known for? / प्रसिद्ध अजंता गुफाएँ मुख्यतः किसके लिए प्रसिद्ध हैं?",
+                                    "options": [
+                                        "A) Hindu temple scripts | हिंदू मंदिर शिलालेख",
+                                        "B) Buddhist paintings | बौद्ध चित्रकला",
+                                        "C) Jain monasteries | जैन मठ",
+                                        "D) Mauryan pillars | मौर्य स्तंभ"
+                                    ],
+                                    "answer": "B) Buddhist paintings | बौद्ध चित्रकला"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "round_number": 2,
+                    "type": "Recognition",
+                    "sections": [
+                        {
+                            "section": "Image",
+                            "questions": [
+                                {
+                                    "question": "Identify this comedian (इस कॉमेडियन को पहचानें)",
+                                    "media_type": "image",
+                                    "media_link": "./image/abhishek.webp",
+                                    "answer": "Abhishek Upmanyu / (अभिषेक उपमन्यु)"
+                                },
+                                {
+                                    "question": "Identify both the actors (दोनों अभिनेताओं को पहचानें)",
+                                    "media_type": "image",
+                                    "media_link": "./image/govinda.webp",
+                                    "answer": "Govinda and Kader Khan/ (गोविंदा और कादर खान)"
+                                },
+                                {
+                                    "question": "Identify The Personality (व्यक्तित्व को पहचानें)",
+                                    "media_type": "image",
+                                    "media_link": "./image/lalit.webp",
+                                    "answer": "Lalit Modi / (ललित मोदी)"
+                                },
+                                {
+                                    "question": "Identify the cricketer (क्रिकेटर को पहचानें)",
+                                    "media_type": "image",
+                                    "media_link": "./image/brettlee.webp",
+                                    "answer": "Brett Lee / (ब्रेट ली)"
+                                }
+                            ]
+                        },
+                        {
+                            "section": "Audio",
+                            "questions": [
+                                {
+                                    "question": "Identify the sportsman. (खिलाड़ी की पहचान करें।)",
+                                    "media_type": "audio",
+                                    "media_link": "./audio/sunil.mpeg",
+                                    "answer": "Sunil Chhetri (सुनील छेत्री)"
+                                },
+                                {
+                                    "question": "Identify the sportswoman. (महिला खिलाड़ी की पहचान करें।)",
+                                    "media_type": "audio",
+                                    "media_link": "./audio/saina.mpeg",
+                                    "answer": "Saina Nehwal (साइना नेहवाल)"
+                                },
+                                {
+                                    "question": "Identify the country from this National Anthem. (इस राष्ट्रगान से देश की पहचान करें।)",
+                                    "media_type": "audio",
+                                    "media_link": "./audio/sri.mpeg",
+                                    "answer": "Sri Lanka (श्रीलंका)"
+                                },
+                                {
+                                    "question": "Identify the motivational speaker/Guru. (प्रेरक वक्ता/गुरु की पहचान करें।)",
+                                    "media_type": "audio",
+                                    "media_link": "./audio/gaur.mpeg",
+                                    "answer": "Gaur Gopal Das (गौर गोपाल दास)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "round_number": 3,
+                    "type": "General Knowledge",
+                    "sections": [
+                        {
+                            "section": "General",
+                            "questions": [
+                                {
+                                    "question": "Which city was named the World Book Capital for the year 2025 by UNESCO? / यूनेस्को द्वारा वर्ष 2025 के लिए किस शहर को विश्व पुस्तक राजधानी नामित किया गया?",
+                                    "options": [
+                                        "A) Madrid, Spain / मैड्रिड, स्पेन",
+                                        "B) Buenos Aires, Argentina / ब्यूनस आयर्स, अर्जेंटीना",
+                                        "C) Rio de Janeiro, Brazil / रियो डी जनेरियो, ब्राजील",
+                                        "D) Sharjah, UAE / शारजाह, संयुक्त अरब अमीरात"
+                                    ],
+                                    "answer": "C) Rio de Janeiro / रियो डी जनेरियो"
+                                },
+                                {
+                                    "question": "The festival of 'Expo 2025' was held in which Japanese city? / 'एक्सपो 2025' उत्सव किस जापानी शहर में आयोजित किया गया?",
+                                    "options": [
+                                        "A) Tokyo / टोक्यो",
+                                        "B) Kyoto / क्योटो",
+                                        "C) Osaka / ओसाका",
+                                        "D) Yokohama / योकोहामा"
+                                    ],
+                                    "answer": "C) Osaka / ओसाका"
+                                },
+                                {
+                                    "question": "What is the name of ISRO's mission that successfully sent an orbiter to Venus in 2025? / इसरो के उस मिशन का क्या नाम है जिसने 2025 में सफलतापूर्वक शुक्र पर एक ऑर्बिटर भेजा?",
+                                    "options": [
+                                        "A) Chandrayaan-4 / चंद्रयान-4",
+                                        "B) Aditya-L2 / आदित्य-L2",
+                                        "C) Shukrayaan-1 / शुक्रयान-1",
+                                        "D) Mangalyaan-2 / मंगलयान-2"
+                                    ],
+                                    "answer": "C) Shukrayaan-1 / शुक्रयान-1"
+                                },
+                                {
+                                    "question": "NASA's Artemis III mission, planned for 2025, aims to achieve what historic milestone? / 2025 के लिए नियोजित नासा का आर्टेमिस III मिशन, कौन सा ऐतिहासिक मील का पत्थर हासिल करना चाहता है?",
+                                    "options": [
+                                        "A) Establish a permanent moon base / एक स्थायी चंद्र आधार स्थापित करना",
+                                        "B) Land the first woman and first person of color on the Moon / चंद्रमा पर पहली महिला और पहले अश्वेत व्यक्ति को उतारना",
+                                        "C) Launch the first mission to Mars from the Moon / चंद्रमा से मंगल पर पहला मिशन लॉन्च करना",
+                                        "D) Deploy a new space telescope on the lunar surface / चंद्र सतह पर एक नया अंतरिक्ष दूरबीन तैनात करना"
+                                    ],
+                                    "answer": "B) Land the first woman and first person of color on the Moon / चंद्रमा पर पहली महिला और पहले अश्वेत व्यक्ति को उतारना"
+                                },
+                                {
+                                    "question": "What is the name of India's own operating system, which saw wider adoption in 2025? / भारत के अपने ऑपरेटिंग सिस्टम का क्या नाम है, जिसे 2025 में व्यापक रूप से अपनाया गया?",
+                                    "options": [
+                                        "A) IndusOS / इंडसओएस",
+                                        "B) BharOS / BharOS",
+                                        "C) ParamOS / परमओएस",
+                                        "D) ShaktiOS / शक्तिओएस"
+                                    ],
+                                    "answer": "B) BharOS / BharOS"
+                                },
+                                {
+                                    "question": "The European Union fully implemented which law in 2025 to regulate artificial intelligence? / यूरोपीय संघ ने आर्टिफिशियल इंटेलिजेंस को विनियमित करने के लिए 2025 में कौन सा कानून पूरी तरह से लागू किया?",
+                                    "options": [
+                                        "A) The Digital Markets Act / डिजिटल मार्केट्स एक्ट",
+                                        "B) The GDPR II / जीडीपीआर II",
+                                        "C) The EU AI Act / ईयू एआई एक्ट",
+                                        "D) The Cyber Resilience Act / साइबर रेजिलिएशन एक्ट"
+                                    ],
+                                    "answer": "C) The EU AI Act / ईयू एआई एक्ट"
+                                },
+                                {
+                                    "question": "The Reserve Bank of India (RBI) launched the pilot for which financial product in 2025? / भारतीय रिजर्व बैंक (RBI) ने 2025 में किस वित्तीय उत्पाद के लिए पायलट लॉन्च किया?",
+                                    "options": [
+                                        "A) Sovereign Green Bonds / सॉवरेन ग्रीन बॉन्ड्स",
+                                        "B) Digital Rupee (e₹-R) for retail / खुदरा के लिए डिजिटल रुपया (e₹-R)",
+                                        "C) Inflation-Indexed Bonds / मुद्रास्फीति-अनुक्रमित बांड",
+                                        "D) A new UPI system / एक नई यूपीआई प्रणाली"
+                                    ],
+                                    "answer": "B) Digital Rupee (e₹-R) for retail / खुदरा के लिए डिजिटल रुपया (e₹-R)"
+                                },
+                                {
+                                    "question": "According to the World Bank, what was the estimated GDP growth rate for India for the fiscal year 2024-25? / विश्व बैंक के अनुसार, वित्तीय वर्ष 2024-25 के लिए भारत की अनुमानित जीडीपी विकास दर क्या थी?",
+                                    "options": [
+                                        "A) 5.9% / 5.9%",
+                                        "B) 6.4% / 6.4%",
+                                        "C) 6.8% / 6.8%",
+                                        "D) 7.2% / 7.2%"
+                                    ],
+                                    "answer": "C) 6.8% / 6.8%"
+                                },
+                                {
+                                    "question": "Which country replaced Mauritius as the top source of Foreign Direct Investment (FDI) into India in 2025? / 2025 में कौन सा देश मॉरीशस को पीछे छोड़कर भारत में प्रत्यक्ष विदेशी निवेश (FDI) का शीर्ष स्रोत बन गया?",
+                                    "options": [
+                                        "A) USA / अमेरीका",
+                                        "B) UAE / संयुक्त अरब अमीरात",
+                                        "C) Singapore / सिंगापुर",
+                                        "D) Netherlands / नीदरलैंड"
+                                    ],
+                                    "answer": "C) Singapore / सिंगापुर"
+                                },
+                                {
+                                    "question": "The world's largest solar power plant was commissioned in 2025 in which Indian state? / विश्व का सबसे बड़ा सौर ऊर्जा संयंत्र 2025 में किस भारतीय राज्य में चालू किया गया?",
+                                    "options": [
+                                        "A) Gujarat / गुजरात",
+                                        "B) Rajasthan / राजस्थान",
+                                        "C) Tamil Nadu / तमिलनाडु",
+                                        "D) Andhra Pradesh / आंध्र प्रदेश"
+                                    ],
+                                    "answer": "B) Rajasthan / राजस्थान"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "group_number": 3,
+            "rounds": [
+                {
+                    "round_number": 1,
+                    "type": "MCQ",
+                    "sections": [
+                        {
+                            "section": "Science",
+                            "questions": [
+                                {
+                                    "question": "In a solar cell illuminated uniformly, what happens to current if the temperature of the cell rises? / सौर सेल पर समान प्रकाश पड़ने पर तापमान बढ़ने से धारा पर क्या असर होगा?",
+                                    "options": [
+                                        "A) Increases slightly / थोड़ा बढ़ जाता है",
+                                        "B) Decreases / घटता है",
+                                        "C) Remains same / वही रहता है",
+                                        "D) First increases then decreases / पहले बढ़ता है फिर घटता है"
+                                    ],
+                                    "answer": "B) Decreases / घटता है (band-gap reduces → open-circuit voltage drops)"
+                                },
+                                {
+                                    "question": "Which gas is evolved when metal reacts with acid? / जब धातु अम्ल के साथ अभिक्रिया करती है तो कौन सी गैस विकसित होती है ?",
+                                    "options": [
+                                        "A) Oxygen / ऑक्सीजन",
+                                        "B) Nitrogen / नाइट्रोजन",
+                                        "C) Carbon dioxide / कार्बन डाइऑक्साइड",
+                                        "D) Hydrogen / हाइड्रोजन"
+                                    ],
+                                    "answer": "D) Hydrogen / हाइड्रोजन"
+                                },
+                                {
+                                    "question": "Haemophilia is an example of –/ हीमोफीलिया किसका उदाहरण है?",
+                                    "options": [
+                                        "A) Autosomal dominance/ स्वलिंगी प्रभुत्व",
+                                        "B) Autosomal recessive/ स्वलिंगी अप्रभावी",
+                                        "C) Sex-linked recessive disorder/ लिंग-संलग्न अप्रभावी विकार",
+                                        "D) Multiple alleles/ बहु-एलील"
+                                    ],
+                                    "answer": "C) Sex-linked recessive disorder/ लिंग-संलग्न अप्रभावी विकार"
+                                },
+                                {
+                                    "question": "Which enzyme is used to join two DNA fragments? / दो DNA खंडों को जोड़ने के लिए कौन-सा एंजाइम उपयोग किया जाता है?",
+                                    "options": [
+                                        "A) DNA polymerase /DNA पोलीमरेज़",
+                                        "B) Restriction enzyme/प्रतिबंध एंजाइम",
+                                        "C) DNA ligase/ DNA लिगेज़",
+                                        "D) Reverse transcriptase /रिवर्स ट्रांसक्रिप्टेज़"
+                                    ],
+                                    "answer": "C) DNA ligase/ DNA लिगेज़"
+                                }
+                            ]
+                        },
+                        {
+                            "section": "Commerce",
+                            "questions": [
+                                {
+                                    "question": "Which is not a feature of a company? / कंपनी की विशेषता नहीं है?",
+                                    "options": [
+                                        "A) Separate legal entity / पृथक कानूनी इकाई",
+                                        "B) Unlimited liability / असीमित देनदारी",
+                                        "C) Perpetual succession / सतत उत्तराधिकार",
+                                        "D) Transferability of shares / शेयरों का हस्तांतरण"
+                                    ],
+                                    "answer": "B) Unlimited liability / असीमित देनदारी"
+                                },
+                                {
+                                    "question": "Double entry system was invented by — / डबल एंट्री सिस्टम का आविष्कार किसने किया था?",
+                                    "options": [
+                                        "A) Luca Pacioli / लुका पाशियोली",
+                                        "B) Adam Smith / एडम स्मिथ",
+                                        "C) Henry Fayol / हेनरी फैयोल",
+                                        "D) J.R. Hicks / जे. आर. हिक्स"
+                                    ],
+                                    "answer": "A) Luca Pacioli / लुका पाशियोली"
+                                },
+                                {
+                                    "question": "The term 'Liability' means — / 'देनदारी' शब्द का अर्थ है —",
+                                    "options": [
+                                        "A) Assets of business / व्यवसाय की संपत्तियाँ",
+                                        "B) Owner’s capital / स्वामी की पूंजी",
+                                        "C) Amount payable by business / व्यवसाय द्वारा देय राशि",
+                                        "D) Income of the business / व्यवसाय की आय"
+                                    ],
+                                    "answer": "C) Amount payable by business / व्यवसाय द्वारा देय राशि"
+                                },
+                                {
+                                    "question": "Demand of a product increases with — / किस स्थिति में उत्पाद की माँग बढ़ती है?",
+                                    "options": [
+                                        "A) Increase in price / मूल्य में वृद्धि",
+                                        "B) Decrease in income / आय में कमी",
+                                        "C) Decrease in price / मूल्य में कमी",
+                                        "D) Increase in tax / कर में वृद्धि"
+                                    ],
+                                    "answer": "C) Decrease in price / मूल्य में कमी"
+                                }
+                            ]
+                        },
+                        {
+                            "section": "Arts",
+                            "questions": [
+                                {
+                                    "question": "Which city is called the ‘Golden City of Rajasthan’? | राजस्थान का ‘स्वर्ण नगरी’ किसे कहा जाता है?",
+                                    "options": [
+                                        "A) Jaisalmer | जैसलमेर",
+                                        "B) Bikaner | बीकानेर",
+                                        "C) Kota | कोटा",
+                                        "D) Jaipur | जयपुर"
+                                    ],
+                                    "answer": "A) Jaisalmer | जैसलमेर"
+                                },
+                                {
+                                    "question": "Indus Valley Civilization site ‘Kalibangan’ is in which state? | भारत की हड़प्पा सभ्यता स्थल ‘कालीबंगन’ किस राज्य में स्थित है?",
+                                    "options": [
+                                        "A) Rajasthan | राजस्थान",
+                                        "B) Gujarat | गुजरात",
+                                        "C) Haryana | हरियाणा",
+                                        "D) Andhra Pradesh | आंध्र प्रदेश"
+                                    ],
+                                    "answer": "A) Rajasthan | राजस्थान"
+                                },
+                                {
+                                    "question": "Who was the first Indian to raise the demand of ‘Purna Swaraj’? | ‘पूर्ण स्वराज’ की मांग सबसे पहले किसने उठाई थी?",
+                                    "options": [
+                                        "A) Bal Gangadhar Tilak | बाल गंगाधर तिलक",
+                                        "B) Mahatma Gandhi | महात्मा गांधी",
+                                        "C) Jawaharlal Nehru | जवाहरलाल नेहरू",
+                                        "D) Dadabhai Naoroji | दादाभाई नौरोजी"
+                                    ],
+                                    "answer": "D) Dadabhai Naoroji | दादाभाई नौरोजी"
+                                },
+                                {
+                                    "question": "Dandi March was associated with which movement? | दांडी मार्च किस आंदोलन से संबंधित है?",
+                                    "options": [
+                                        "A) Quit India Movement | भारत छोड़ो आंदोलन",
+                                        "B) Non-Cooperation Movement | असहयोग आंदोलन",
+                                        "C) Civil Disobedience Movement | सविनय अवज्ञा आंदोलन",
+                                        "D) Swadeshi Movement | स्वदेशी आंदोलन"
+                                    ],
+                                    "answer": "C) Civil Disobedience Movement | सविनय अवज्ञा आंदोलन"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "round_number": 2,
+                    "type": "Recognition",
+                    "sections": [
+                        {
+                            "section": "Image",
+                            "questions": [
+                                {
+                                    "question": "Identify the cricketer (क्रिकेटर को पहचानें)",
+                                    "media_type": "image",
+                                    "media_link": "./image/mohinder.webp",
+                                    "answer": "Mohinder Amarnath / (मोहिंदर अमरनाथ)"
+                                },
+                                {
+                                    "question": "Identify this former badminton player who is the father of a famous celebrity / इस पूर्व बैडमिंटन खिलाड़ी को पहचानें जो एक प्रसिद्ध हस्ती के पिता हैं",
+                                    "media_type": "image",
+                                    "media_link": "./image/prakash.webp",
+                                    "answer": "Prakash Padukone / (प्रकाश पादुकोन)"
+                                },
+                                {
+                                    "question": "Identify the dance form (नृत्य शैली को पहचानें)",
+                                    "media_type": "image",
+                                    "media_link": "./imagge/odissi.webp",
+                                    "answer": "Odissi Dance / (ओडिसी नृत्य)"
+                                },
+                                {
+                                    "question": "Identify this World Wonder (इस विश्व के 7 अजूबों की पहचान कीजिए)",
+                                    "media_type": "image",
+                                    "media_link": "./image/petra.webp",
+                                    "answer": "Petra, Jordan / (पेट्रा, जॉर्डन)"
+                                }
+                            ]
+                        },
+                        {
+                            "section": "Audio",
+                            "questions": [
+                                {
+                                    "question": "Identify the movie name/actor. (फिल्म का नाम/अभिनेता की पहचान करें।)",
+                                    "media_type": "audio",
+                                    "media_link": "./audio/kgf.mpeg",
+                                    "answer": "KGF / Yash (केजीएफ / यश)"
+                                },
+                                {
+                                    "question": "Identify the movie/actress. (फिल्म/अभिनेत्री की पहचान करें।)",
+                                    "media_type": "audio",
+                                    "media_link": "./audio/bajirao.mpeg",
+                                    "answer": "Bajirao Mastani / Priyanka Chopra (बाजीराव मस्तानी / प्रियंका चोपड़ा)"
+                                },
+                                {
+                                    "question": "Identify the brand. (ब्रांड की पहचान करें।)",
+                                    "media_type": "audio",
+                                    "media_link": "./audio/airtel.mpeg",
+                                    "answer": "Airtel (एयरटेल)"
+                                },
+                                {
+                                    "question": "Identify the politician/poet. (राजनेता/कवि की पहचान करें।)",
+                                    "media_type": "audio",
+                                    "media_link": "./audio/atal.mpeg",
+                                    "answer": "Atal Bihari Vajpayee (अटल बिहारी वाजपेयी)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "round_number": 3,
+                    "type": "General Knowledge",
+                    "sections": [
+                        {
+                            "section": "General",
+                            "questions": [
+                                {
+                                    "question": "Which country won the ICC Champions Trophy cricket tournament in 2025? / 2025 में आईसीसी चैंपियंस ट्रॉफी क्रिकेट टूर्नामेंट किस देश ने जीता?",
+                                    "options": [
+                                        "A) Australia / ऑस्ट्रेलिया",
+                                        "B) England / इंग्लैंड",
+                                        "C) Pakistan / पाकिस्तान",
+                                        "D) India / भारत"
+                                    ],
+                                    "answer": "D) India / भारत"
+                                },
+                                {
+                                    "question": "Who won the men's singles title at Wimbledon 2025? / विंबलडन 2025 में पुरुष एकल का खिताब किसने जीता?",
+                                    "options": [
+                                        "A) Novak Djokovic / नोवाक जोकोविच",
+                                        "B) Carlos Alcaraz / कार्लोस अलकराज",
+                                        "C) Jannik Sinner / यानिक सिनर",
+                                        "D) Daniil Medvedev / डेनियल मेदवेदेव"
+                                    ],
+                                    "answer": "B) Carlos Alcaraz / कार्लोस अलकराज"
+                                },
+                                {
+                                    "question": "Which city was selected to host the 2032 Summer Olympics? / 2032 ग्रीष्मकालीन ओलंपिक की मेजबानी के लिए किस शहर का चयन किया गया?",
+                                    "options": [
+                                        "A) Doha / दोहा",
+                                        "B) Jakarta / जकार्ता",
+                                        "C) Brisbane / ब्रिस्बेन",
+                                        "D) Madrid / मैड्रिड"
+                                    ],
+                                    "answer": "C) Brisbane / ब्रिस्बेन"
+                                },
+                                {
+                                    "question": "Who won the inaugural 32-team FIFA Club World Cup in 2025? / 2025 में पहला 32-टीमों वाला फीफा क्लब विश्व कप किसने जीता?",
+                                    "options": [
+                                        "A) Manchester City / मैनचेस्टर सिटी",
+                                        "B) Bayern Munich / बायर्न म्यूनिख",
+                                        "C) Flamengo / फ्लैमेंगो",
+                                        "D) Real Madrid / रियल मैड्रिड"
+                                    ],
+                                    "answer": "D) Real Madrid / रियल मैड्रिड"
+                                },
+                                {
+                                    "question": "Which Indian athlete won a gold medal at the World Athletics Championships 2025 in the Javelin Throw? / किस भारतीय एथलीट ने विश्व एथलेटिक्स चैंपियनशिप 2025 में भाला फेंक में स्वर्ण पदक जीता?",
+                                    "options": [
+                                        "A) Kishore Jena / किशोर जेना",
+                                        "B) Shivpal Singh / शिवपाल सिंह",
+                                        "C) Neeraj Chopra / नीरज चोपड़ा",
+                                        "D) D.P. Manu / डी.पी. मनु"
+                                    ],
+                                    "answer": "C) Neeraj Chopra / नीरज चोपड़ा"
+                                },
+                                {
+                                    "question": "The Khelo India Youth Games 2025 were held in which city? / खेलो इंडिया यूथ गेम्स 2025 किस शहर में आयोजित किए गए?",
+                                    "options": [
+                                        "A) Pune / पुणे",
+                                        "B) Guwahati / गुवाहाटी",
+                                        "C) Chennai / चेन्नई",
+                                        "D) Bhopal / भोपाल"
+                                    ],
+                                    "answer": "C) Chennai / चेन्नई"
+                                },
+                                {
+                                    "question": "Who became the first Indian woman wrestler to win an Olympic gold medal (hypothetically in 2024)? / ओलंपिक स्वर्ण पदक (काल्पनिक रूप से 2024 में) जीतने वाली पहली भारतीय महिला पहलवान कौन बनीं?",
+                                    "options": [
+                                        "A) Sakshi Malik / साक्षी मलिक",
+                                        "B) Antim Panghal / अंतिम पंघाल",
+                                        "C) Vinesh Phogat / विनेश फोगाट",
+                                        "D) Anshu Malik / अंशु मलिक"
+                                    ],
+                                    "answer": "C) Vinesh Phogat / विनेश फोगाट"
+                                },
+                                {
+                                    "question": "Which film won the Academy Award for Best Picture in 2025? / 2025 में किस फिल्म ने सर्वश्रेष्ठ फिल्म का अकादमी पुरस्कार जीता?",
+                                    "options": [
+                                        "A) Furiosa: A Mad Max Saga / फुरिओसा: ए मैड मैक्स सागा",
+                                        "B) Dune: Part Two / ड्यून: पार्ट टू",
+                                        "C) Gladiator 2 / ग्लैडिएटर 2",
+                                        "D) Kingdom of the Planet of the Apes / किंगडम ऑफ द प्लैनेट ऑफ द एप्स"
+                                    ],
+                                    "answer": "B) Dune: Part Two / ड्यून: पार्ट टू"
+                                },
+                                {
+                                    "question": "Who was awarded the Nobel Peace Prize in 2024? / 2024 में नोबेल शांति पुरस्कार किसे प्रदान किया गया?",
+                                    "options": [
+                                        "A) The International Court of Justice (ICJ) / अंतर्राष्ट्रीय न्यायालय (ICJ)",
+                                        "B) Reporters Without Borders / रिपोर्टर्स विदाउट बॉर्डर्स",
+                                        "C) Greta Thunberg / ग्रेटा थनबर्ग",
+                                        "D) The World Health Organization (WHO) / विश्व स्वास्थ्य संगठन (WHO)"
+                                    ],
+                                    "answer": "B) Reporters Without Borders / रिपोर्टर्स विदाउट बॉर्डर्स"
+                                },
+                                {
+                                    "question": "Which author won the Booker Prize in 2024? / 2024 में किस लेखक ने बुकर पुरस्कार जीता?",
+                                    "options": [
+                                        "A) Salman Rushdie / सलमान रुश्दी",
+                                        "B) Arundhati Roy / अरुंधति रॉय",
+                                        "C) Samantha Harvey / सामंथा हार्वे",
+                                        "D) Paul Lynch / पॉल लिंच"
+                                    ],
+                                    "answer": "C) Samantha Harvey / सामंथा हार्वे"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "group_number": 4,
+            "rounds": [
+                {
+                    "round_number": 1,
+                    "type": "MCQ",
+                    "sections": [
+                        {
+                            "section": "Science",
+                            "questions": [
+                                {
+                                    "question": "Which metal is stored in kerosene? | कौन-सी धातु मिट्टी के तेल में रखी जाती है?",
+                                    "options": [
+                                        "A) Iron | लोहा",
+                                        "B) Sodium | सोडियम",
+                                        "C) Aluminium | एल्युमिनियम",
+                                        "D) Copper | तांबा"
+                                    ],
+                                    "answer": "B) Sodium | सोडियम"
+                                },
+                                {
+                                    "question": "Which acid is present in vinegar? | विनेगर (सिरका) में कौन-सा अम्ल होता है?",
+                                    "options": [
+                                        "A) Hydrochloric acid | हाइड्रोक्लोरिक अम्ल",
+                                        "B) Nitric acid | नाइट्रिक अम्ल",
+                                        "C) Acetic acid | एसीटिक अम्ल",
+                                        "D) Sulphuric acid | सल्फ्यूरिक अम्ल"
+                                    ],
+                                    "answer": "C) Acetic acid | एसीटिक अम्ल"
+                                },
+                                {
+                                    "question": "A hollow metal sphere is given a positive charge and then a small uncharged metal ball is placed inside it (not touching). What charge will appear on the small ball? | एक खोखले धातु गोले को धन आवेशित किया जाता है और एक छोटा बिना आवेश का धातु गोला उसके भीतर रखा जाता है (स्पर्श नहीं करता)। छोटे गोले पर क्या आवेश होगा?",
+                                    "options": [
+                                        "A) Positive | धनात्मक",
+                                        "B) Negative | ऋणात्मक",
+                                        "C) Zero | शून्य",
+                                        "D) Same as sphere | गोले के समान"
+                                    ],
+                                    "answer": "C) Zero | शून्य"
+                                },
+                                {
+                                    "question": "Which part of nephron is responsible for maximum reabsorption of water? | नेफ्रॉन का कौन-सा भाग पानी के अधिकतम पुनः अवशोषण के लिए जिम्मेदार है?",
+                                    "options": [
+                                        "A) Distal convoluted tubule | डिस्टल कन्वोल्यूटेड ट्यूब्यूल",
+                                        "B) Proximal convoluted tubule | प्रॉक्सिमल कन्वोल्यूटेड ट्यूब्यूल",
+                                        "C) Collecting duct | कलेक्टिंग डक्ट",
+                                        "D) Loop of Henle | लूप ऑफ हेनले"
+                                    ],
+                                    "answer": "B) Proximal convoluted tubule | प्रॉक्सिमल कन्वोल्यूटेड ट्यूब्यूल"
+                                }
+                            ]
+                        },
+                        {
+                            "section": "Commerce",
+                            "questions": [
+                                {
+                                    "question": "Which is a method of sales promotion? / निम्न में से कौन बिक्री संवर्धन की विधि है?",
+                                    "options": [
+                                        "A) Advertising / विज्ञापन",
+                                        "B) Discount / छूट",
+                                        "C) Personal selling / व्यक्तिगत बिक्री",
+                                        "D) All of the above / उपरोक्त सभी"
+                                    ],
+                                    "answer": "D) All of the above / उपरोक्त सभी"
+                                },
+                                {
+                                    "question": "Which among the following is not a function of management? / निम्नलिखित में से कौन प्रबंधन का कार्य नहीं है?",
+                                    "options": [
+                                        "A) Planning / योजना बनाना",
+                                        "B) Organising / संगठन करना",
+                                        "C) Sleeping / सोना",
+                                        "D) Controlling / नियंत्रण करना"
+                                    ],
+                                    "answer": "C) Sleeping / सोना"
+                                },
+                                {
+                                    "question": "Who is called the first economist to write systematically about management? / प्रबंधन पर व्यवस्थित रूप से लिखने वाले पहले अर्थशास्त्री कौन थे?",
+                                    "options": [
+                                        "A) Max Weber / मैक्स वेबर",
+                                        "B) Peter Drucker / पीटर ड्रकर",
+                                        "C) Henry Fayol / हेनरी फैयोल",
+                                        "D) Elton Mayo / एल्टन मेयो"
+                                    ],
+                                    "answer": "C) Henry Fayol / हेनरी फैयोल"
+                                },
+                                {
+                                    "question": "GDP stands for — / GDP का पूरा रूप है —",
+                                    "options": [
+                                        "A) Gross Development Product / सकल विकास उत्पाद",
+                                        "B) Gross Domestic Product / सकल घरेलू उत्पाद",
+                                        "C) General Domestic Price / सामान्य घरेलू मूल्य",
+                                        "D) General Development Plan / सामान्य विकास योजना"
+                                    ],
+                                    "answer": "B) Gross Domestic Product / सकल घरेलू उत्पाद"
+                                }
+                            ]
+                        },
+                        {
+                            "section": "Arts",
+                            "questions": [
+                                {
+                                    "question": "Chittorgarh Fort is famous for how many ‘Jauhars’? | चित्तौड़गढ़ किला कितने ‘जौहर’ के लिए प्रसिद्ध है?",
+                                    "options": [
+                                        "A) 1 | 1",
+                                        "B) 2 | 2",
+                                        "C) 3 | 3",
+                                        "D) 4 | 4"
+                                    ],
+                                    "answer": "C) 3 | 3"
+                                },
+                                {
+                                    "question": "Which Article of the Indian Constitution abolished untouchability? | भारत के संविधान का कौन-सा अनुच्छेद अस्पृश्यता को समाप्त करता है?",
+                                    "options": [
+                                        "A) Article 16 | अनुच्छेद 16",
+                                        "B) Article 15 | अनुच्छेद 15",
+                                        "C) Article 17 | अनुच्छेद 17",
+                                        "D) Article 19 | अनुच्छेद 19"
+                                    ],
+                                    "answer": "C) Article 17 | अनुच्छेद 17"
+                                },
+                                {
+                                    "question": "Chairman of Rajya Sabha in India is? | भारत में राज्यसभा का अध्यक्ष कौन होता है?",
+                                    "options": [
+                                        "A) President | राष्ट्रपति",
+                                        "B) Prime Minister | प्रधानमंत्री",
+                                        "C) Vice President | उपराष्ट्रपति",
+                                        "D) Lok Sabha Speaker | लोकसभा अध्यक्ष"
+                                    ],
+                                    "answer": "C) Vice President | उपराष्ट्रपति"
+                                },
+                                {
+                                    "question": "Which state of India has the longest coastline? | भारत का सबसे लंबा समुद्र तट किस राज्य का है?",
+                                    "options": [
+                                        "A) Gujarat | गुजरात",
+                                        "B) Tamil Nadu | तमिलनाडु",
+                                        "C) Andhra Pradesh | आंध्र प्रदेश",
+                                        "D) Kerala | केरल"
+                                    ],
+                                    "answer": "A) Gujarat | गुजरात"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "round_number": 2,
+                    "type": "Recognition",
+                    "sections": [
+                        {
+                            "section": "Image",
+                            "questions": [
+                                {
+                                    "question": "Identify the name of the country from this flag / इस ध्वज से देश का नाम पहचानें",
+                                    "media_type": "image",
+                                    "media_link": "./image/denmark.webp",
+                                    "answer": "Denmark / (डेनमार्क)"
+                                },
+                                {
+                                    "question": "Identify the currency (मुद्रा को पहचानें)",
+                                    "media_type": "image",
+                                    "media_link": "./image/swiss.webp",
+                                    "answer": "Swiss Franc / (स्विस फ़्रैंक)"
+                                },
+                                {
+                                    "question": "Name the body Part marked in red in English / लाल रंग से चिह्नित शरीर के अंग का नाम अंग्रेजी में लिखें",
+                                    "media_type": "image",
+                                    "media_link": "./image/napeneck.webp",
+                                    "answer": "Nape of the Neck / (गर्दन का पिछला भाग)"
+                                },
+                                {
+                                    "question": "Name the body Part marked in red in English / लाल रंग से चिह्नित शरीर के अंग का नाम अंग्रेजी में लिखें",
+                                    "media_type": "image",
+                                    "media_link": "./image/septum.webp",
+                                    "answer": "Septum / (पट)"
+                                }
+                            ]
+                        },
+                        {
+                            "section": "Audio",
+                            "questions": [
+                                {
+                                    "question": "Identify the TV sitcom. / (टीवी सिटकॉम की पहचान करें।)",
+                                    "media_type": "audio",
+                                    "media_link": "./audio/bigbang.mpeg",
+                                    "answer": "Big Bang Theory (बिग बैंग थ्योरी)"
+                                },
+                                {
+                                    "question": "Identify the language. / (भाषा की पहचान करें।)",
+                                    "media_type": "audio",
+                                    "media_link": "./audio/telugu.mpeg",
+                                    "answer": "Telugu (तेलुगु)"
+                                },
+                                {
+                                    "question": "Identify the TV series. / (टीवी धारावाहिक की पहचान करें।)",
+                                    "media_type": "audio",
+                                    "media_link": "./audio/malgudi.mpeg",
+                                    "answer": "Malgudi Days (मालगुडी डेज़)"
+                                },
+                                {
+                                    "question": "Identify the animal. / (पशु की पहचान करें।)",
+                                    "media_type": "audio",
+                                    "media_link": "./audio/dolphin.mpeg",
+                                    "answer": "Dolphin (डॉल्फिन)"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "round_number": 3,
+                    "type": "General Knowledge",
+                    "sections": [
+                        {
+                            "section": "General",
+                            "questions": [
+                                {
+                                    "question": "Who was honoured with the Bharat Ratna, India’s highest civilian award, in 2025? / 2025 में भारत के सर्वोच्च नागरिक पुरस्कार, भारत रत्न से किसे सम्मानित किया गया?",
+                                    "options": [
+                                        "A) Ratan Tata / रतन टाटा",
+                                        "B) A. R. Rahman / ए. आर. रहमान",
+                                        "C) M.S. Swaminathan (posthumously) / एम.एस. स्वामीनाथन (मरणोपरांत)",
+                                        "D) E. Sreedharan / ई. श्रीधरन"
+                                    ],
+                                    "answer": "C) M.S. Swaminathan (posthumously) / एम.एस. स्वामीनाथन (मरणोपरांत)"
+                                },
+                                {
+                                    "question": "Who won the Dadasaheb Phalke Award for the year 2024? / वर्ष 2024 के लिए दादा साहब फाल्के पुरस्कार किसने जीता?",
+                                    "options": [
+                                        "A) Amitabh Bachchan / अमिताभ बच्चन",
+                                        "B) Kamal Haasan / कमल हासन",
+                                        "C) Shah Rukh Khan / शाहरुख खान",
+                                        "D) Anupam Kher / अनुपम खेर"
+                                    ],
+                                    "answer": "C) Shah Rukh Khan / शाहरुख खान"
+                                },
+                                {
+                                    "question": "The Ramon Magsaysay Award in 2025 was given to an Indian for his work in which field? / 2025 में रेमन मैग्सेसे पुरस्कार एक भारतीय को उनके किस क्षेत्र में काम के लिए दिया गया?",
+                                    "options": [
+                                        "A) Right to Information activism / सूचना का अधिकार सक्रियता",
+                                        "B) Affordable education / सस्ती शिक्षा",
+                                        "C) Water conservation and rural development / जल संरक्षण और ग्रामीण विकास",
+                                        "D) Independent journalism / स्वतंत्र पत्रकारिता"
+                                    ],
+                                    "answer": "C) Water conservation and rural development / जल संरक्षण और ग्रामीण विकास"
+                                },
+                                {
+                                    "question": "India increased its target for renewable energy capacity to what new goal by 2030? / भारत ने 2030 तक अपनी नवीकरणीय ऊर्जा क्षमता का लक्ष्य बढ़ाकर क्या नया लक्ष्य रखा है?",
+                                    "options": [
+                                        "A) 500 GW / 500 गीगावॉट",
+                                        "B) 600 GW / 600 गीगावॉट",
+                                        "C) 750 GW / 750 गीगावॉट",
+                                        "D) 1000 GW / 1000 गीगावॉट"
+                                    ],
+                                    "answer": "B) 600 GW / 600 गीगावॉट"
+                                },
+                                {
+                                    "question": "Which animal, recently reintroduced to India, was spotted in a new state for the first time in 2025? / 2025 में किस जानवर को, जिसे हाल ही में भारत में फिर से लाया गया था, पहली बार एक नए राज्य में देखा गया?",
+                                    "options": [
+                                        "A) Cheetah / चीता",
+                                        "B) Lion / शेर",
+                                        "C) Snow Leopard / हिम तेंदुआ",
+                                        "D) Red Panda / लाल पांडा"
+                                    ],
+                                    "answer": "A) Cheetah / चीता"
+                                },
+                                {
+                                    "question": "A new tiger reserve was announced in 2025 in which state? / 2025 में किस राज्य में एक नए बाघ अभयारण्य की घोषणा की गई?",
+                                    "options": [
+                                        "A) Kerala / केरल",
+                                        "B) Goa / गोवा",
+                                        "C) Punjab / पंजाब",
+                                        "D) Haryana / हरियाणा"
+                                    ],
+                                    "answer": "B) Goa / गोवा"
+                                },
+                                {
+                                    "question": "The year 2025 was declared by the United Nations as the International Year of what? / संयुक्त राष्ट्र द्वारा वर्ष 2025 को किस विषय का अंतर्राष्ट्रीय वर्ष घोषित किया गया?",
+                                    "options": [
+                                        "A) Peace and Trust / शांति और विश्वास",
+                                        "B) Artisanal Fisheries and Aquaculture / कारीगर मत्स्य पालन और जलीय कृषि",
+                                        "C) Cooperatives / सहकारिता",
+                                        "D) Glass / कांच"
+                                    ],
+                                    "answer": "C) Cooperatives / सहकारिता"
+                                },
+                                {
+                                    "question": "India’s longest sea bridge, connecting Mumbai with Navi Mumbai, was named after which personality? / मुंबई को नवी मुंबई से जोड़ने वाले भारत के सबसे लंबे समुद्री पुल का नाम किस व्यक्तित्व के नाम पर रखा गया है?",
+                                    "options": [
+                                        "A) Sardar Vallabhbhai Patel / सरदार वल्लभभाई पटेल",
+                                        "B) Atal Bihari Vajpayee / अटल बिहारी वाजपेयी",
+                                        "C) Indira Gandhi / इंदिरा गांधी",
+                                        "D) Shivaji Maharaj / शिवाजी महाराज"
+                                    ],
+                                    "answer": "B) Atal Bihari Vajpayee / अटल बिहारी वाजपेयी"
+                                },
+                                {
+                                    "question": "What was the official mascot for the 2024 Paris Olympics? / 2024 पेरिस ओलंपिक का आधिकारिक शुभंकर क्या था?",
+                                    "options": [
+                                        "A) Vinicius and Tom / विनीसियस और टॉम",
+                                        "B) Miraitowa and Someity / मिराइटोवा और सोमाइटी",
+                                        "C) The Phryges / द फ्रीजियन कैप्स (The Phryges)",
+                                        "D) Waldi / वाल्डी"
+                                    ],
+                                    "answer": "C) The Phryges / द फ्रीजियन कैप्स (The Phryges)"
+                                },
+                                {
+                                    "question": "What major electoral reform was introduced by the Election Commission of India on a pilot basis in 2025? / 2025 में पायलट आधार पर भारत के चुनाव आयोग द्वारा कौन सा प्रमुख चुनावी सुधार पेश किया गया?",
+                                    "options": [
+                                        "A) Online voting for all citizens / सभी नागरिकों के लिए ऑनलाइन मतदान",
+                                        "B) Blockchain-based remote voting / ब्लॉकचेन-आधारित दूरस्थ मतदान",
+                                        "C) Biometric voting at all booths / सभी बूथों पर बायोमेट्रिक मतदान",
+                                        "D) Replacing EVMs with paper ballots / ईवीएम को मतपत्रों से बदलना"
+                                    ],
+                                    "answer": "B) Blockchain-based remote voting / ब्लॉकचेन-आधारित दूरस्थ मतदान"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }

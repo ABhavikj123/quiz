@@ -1,0 +1,44 @@
+{
+  "questions": [
+    {
+      "question": "What type of computer memory is temporary and clears when power is off? / कौन सा कंप्यूटर मेमोरी अस्थायी है और पावर बंद होने पर साफ़ हो जाती है?",
+      "answer": "RAM / रैम"
+    },
+    {
+      "question": "What does GPT stand for in ChatGPT? / चैटजीपीटी में जीपीटी का पूरा नाम क्या है?",
+      "answer": "Generative Pre-trained Transformer / जनरेटिव पूर्व-प्रशिक्षित ट्रांसफार्मर"
+    },
+    {
+      "question": "Who is known as the Father of Artificial Intelligence? / कृत्रिम बुद्धिमत्ता का पिता कौन कहलाते हैं?",
+      "answer": "John McCarthy / जॉन मैक्कार्थी"
+    },
+    {
+      "question": "What is the name of Tesla’s humanoid robot? / टेस्ला का ह्यूमैनॉइड रोबोट का नाम क्या है?",
+      "answer": "Optimus / ऑप्टिमस"
+    },
+    {
+      "question": "Who invented the World Wide Web (WWW)? / वर्ल्ड वाइड वेब का आविष्कार किसने किया?",
+      "answer": "Tim Berners-Lee / टिम बर्नर्स-ली"
+    },
+    {
+      "question": "Which company developed the AI assistant Bixby? / बिक्सबी एआई असिस्टेंट किस कंपनी ने विकसित किया?",
+      "answer": "Samsung / सैमसंग"
+    },
+    {
+      "question": "Name one example of an input and output device in one. / एक ऐसा डिवाइस का उदाहरण बताइए जो इनपुट और आउटपुट दोनों का काम करता है।",
+      "answer": "Touchscreen / टचस्क्रीन"
+    },
+    {
+      "question": "Which company created ChatGPT? / चैटजीपीटी किस कंपनी ने बनाया?",
+      "answer": "OpenAI / ओपनएआई"
+    },
+    {
+      "question": "Which unit is used to measure computer speed? / कंप्यूटर की गति मापने की इकाई कौन सी है?",
+      "answer": "Hertz (Hz) or Gigahertz (GHz) / हर्ट्ज़ या गीगाहर्ट्ज़"
+    },
+    {
+      "question": "What is phishing? / फ़िशिंग क्या है?",
+      "answer": "A cyber-attack to steal personal information via fake emails or websites / यह एक साइबर-हमला है जिसमें नकली ईमेल या वेबसाइट के माध्यम से व्यक्तिगत जानकारी चुराई जाती है।"
+    }
+  ]
+}

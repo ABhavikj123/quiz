@@ -121,6 +121,42 @@ export const updateTeamScore = (groupId: number, teamName: string, round: 1 | 2 
   saveQuizState(state)
 }
 
+// Update team score by a delta (can be negative). Allows adding/subtracting multiple points.
+export const updateTeamScoreByDelta = (
+  groupId: number,
+  teamName: string,
+  round: 1 | 2 | 3,
+  delta: number,
+  questionIndex?: number,
+) => {
+  const state = getQuizState()
+  if (!state) return
+
+  const groupIndex = state.groups.findIndex((g) => g.groupId === groupId)
+  if (groupIndex === -1) return
+
+  const group = state.groups[groupIndex]
+  const teamIndex = group.teams.findIndex((t) => t.teamName === teamName)
+  if (teamIndex === -1) return
+
+  const team = group.teams[teamIndex]
+
+  // Add delta to the appropriate round score
+  if (round === 1) team.round1Score += delta
+  else if (round === 2) team.round2Score += delta
+  else if (round === 3) team.round3Score += delta
+
+  // Update total
+  team.totalScore = team.round1Score + team.round2Score + team.round3Score
+
+  if (typeof questionIndex === "number") {
+    team.lastScoredQuestion = questionIndex
+    team.lastScoredRound = round
+  }
+
+  saveQuizState(state)
+}
+
 export const revokeLastScore = (groupId: number, teamName: string, round: 1 | 2 | 3): void => {
   const state = getQuizState()
   if (!state) return

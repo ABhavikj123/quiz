@@ -9,7 +9,6 @@ import {
   ImageIcon,
   Target,
   Play,
-  BarChart3,
   Award,
   Trophy,
   Clock,
@@ -19,43 +18,65 @@ import {
   X,
 } from "lucide-react"
 import { useState } from "react"
+import Image from "next/image"
 
 export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <div className="min-h-screen bg-background">
-      <nav className="sticky top-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
+  <div className="relative min-h-screen bg-gradient-to-br from-amber-300 via-amber-200 to-sky-300 overflow-hidden">
+      {/* Decorative background SVGs - light, student/quiz themed, non-intrusive */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
+        {/* soft top-left blob */}
+        <svg className="absolute -top-8 -left-20 w-96 h-96 opacity-35" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+              <stop offset="0%" stopColor="#FFE08A" />
+              <stop offset="100%" stopColor="#FFC061" />
+            </linearGradient>
+          </defs>
+          <path fill="url(#g1)" d="M40,-20 C60,-40 120,-20 140,10 C160,40 140,90 100,110 C60,130 10,120 -10,90 C-30,60 20,0 40,-20 Z" transform="translate(30 30) scale(1.05)" />
+        </svg>
+
+        {/* faint dotted notebook pattern center */}
+        <svg className="absolute inset-0 mx-auto my-12 w-[60%] h-[60%] opacity-12" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse">
+              <circle cx="1" cy="1" r="1" fill="#000" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#dots)" />
+        </svg>
+
+        {/* bottom-right pencil-like accent */}
+        <svg className="absolute -right-12 -bottom-8 w-72 h-72 opacity-28" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <g fill="none">
+            <rect x="10" y="30" width="60" height="30" rx="6" fill="#FFF1D6" />
+            <path d="M70 30 L90 10 L100 20 L80 40 Z" fill="#FFD4A3" />
+            <circle cx="20" cy="50" r="3" fill="#FFD08A" />
+          </g>
+        </svg>
+      </div>
+  <nav className="sticky top-0 w-full z-50 bg-amber-200/90 backdrop-blur-md border-b border-amber-300 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             <div className="flex items-center gap-3">
-              <img
-                src="/logo.png"
-                alt="Pacific University Logo"
-                className="h-8 w-8 sm:h-10 sm:w-10 object-contain"
-              />
-              <div className="text-lg sm:text-xl font-bold text-foreground">Pacific University</div>
+                <Image
+                  src="/logo.png"
+                  alt="Pacific University Logo"
+                  width={48}
+                  height={48}
+                  className="h-10 w-10 sm:h-12 sm:w-12 object-contain"
+                />
+                <div className="text-lg sm:text-xl font-bold text-amber-900">Pacific University</div>
             </div>
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-6">
-              {/* <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
-                Home
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium">
-                Teams
-              </a>
-              <Button variant="ghost" size="sm" className="font-medium">
-                <BarChart3 className="w-4 h-4 mr-2" />
-                Leaderboard
-              </Button>
-              <Button variant="ghost" size="sm" className="font-medium">
-                <Award className="w-4 h-4 mr-2" />
-                Results
-              </Button> */}
+              
               <Button
                 size="sm"
-                className="font-medium bg-primary text-primary-foreground hover:bg-primary/90"
+                className="font-medium bg-amber-500 text-white hover:bg-amber-600 shadow"
                 onClick={() => (window.location.href = "/quiz")}
               >
                 <Play className="w-4 h-4 mr-2" />
@@ -73,26 +94,7 @@ export default function HomePage() {
           {mobileMenuOpen && (
             <div className="lg:hidden py-4 border-t border-border">
               <div className="flex flex-col gap-4">
-                {/* <a
-                  href="#"
-                  className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
-                >
-                  Home
-                </a>
-                <a
-                  href="#"
-                  className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
-                >
-                  Teams
-                </a>
-                <Button variant="ghost" size="sm" className="font-medium justify-start">
-                  <BarChart3 className="w-4 h-4 mr-2" />
-                  Leaderboard
-                </Button>
-                <Button variant="ghost" size="sm" className="font-medium justify-start">
-                  <Award className="w-4 h-4 mr-2" />
-                  Results
-                </Button> */}
+                
                 <Button
                   size="sm"
                   className="font-medium bg-primary text-primary-foreground hover:bg-primary/90 justify-start"
@@ -107,24 +109,29 @@ export default function HomePage() {
         </div>
       </nav>
 
-      <section className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
+  <section className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 lg:mb-20">
             <Badge
               variant="secondary"
-              className="mb-4 sm:mb-6 text-xs sm:text-sm font-medium px-4 py-2 bg-primary/10 text-primary border-primary/20"
+              className="mb-4 sm:mb-6 text-base sm:text-sm font-semibold px-5 py-3 bg-amber-200 text-amber-900 border-amber-300"
             >
-              🏆 Academic Excellence Competition 2024
+              🏆 Academic Excellence Competition 2025
             </Badge>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-4 sm:mb-6 tracking-tight text-balance leading-tight">
+            {/* Pacific logo centered below the badge (larger, with subtle shadow) */}
+            <div className="mx-auto mb-6 mt-2">
+              <Image src="/pacificlogo.png" alt="Pacific Logo" width={224} height={224} className="mx-auto h-56 w-auto object-contain rounded-md shadow-xl" />
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-amber-900 mb-4 sm:mb-6 tracking-tight leading-tight">
               Quiz Championship
               <span className="block bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-transparent mt-2">
                 Battle of Minds
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg lg:text-xl text-muted-foreground mb-8 sm:mb-12 max-w-4xl mx-auto text-balance leading-relaxed px-4">
+            <p className="text-base sm:text-lg lg:text-xl text-amber-800 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4">
               The ultimate academic showdown where 16 elite teams clash across 3 intense rounds of knowledge, quick
               thinking, and strategic brilliance. Only the smartest will survive.
             </p>
@@ -132,43 +139,36 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-12 sm:mb-16 px-4">
               <Button
                 size="lg"
-                className="text-base px-6 sm:px-8 py-4 sm:py-6 font-semibold bg-primary text-primary-foreground hover:bg-primary/90"
+                className="text-base px-6 sm:px-8 py-4 sm:py-6 font-semibold bg-amber-500 text-white hover:bg-amber-600 shadow-xl"
                 onClick={() => (window.location.href = "/quiz")}
               >
                 <Play className="w-5 h-5 mr-2" />
                 Start Competition
               </Button>
-              {/* <Button
-                variant="outline"
-                size="lg"
-                className="text-base px-6 sm:px-8 py-4 sm:py-6 font-semibold hover:bg-primary/5 bg-transparent"
-              >
-                <BarChart3 className="w-5 h-4 mr-2" />
-                Live Leaderboard
-              </Button> */}
+              
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
-              <div className="text-center p-4 sm:p-6 bg-card rounded-2xl border border-border hover:shadow-lg transition-shadow duration-200">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-transparent mb-2">
+              <div className="text-center p-4 sm:p-6 bg-amber-100 rounded-2xl border border-amber-200 hover:shadow-xl transition-shadow duration-200">
+          <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-amber-500 to-emerald-400 bg-clip-text text-transparent mb-2">
                   16
                 </div>
                 <div className="text-xs sm:text-sm text-muted-foreground font-medium">Elite Teams</div>
               </div>
-              <div className="text-center p-4 sm:p-6 bg-card rounded-2xl border border-border hover:shadow-lg transition-shadow duration-200">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-transparent mb-2">
+              <div className="text-center p-4 sm:p-6 bg-sky-100 rounded-2xl border border-sky-200 hover:shadow-xl transition-shadow duration-200">
+          <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-amber-500 to-emerald-400 bg-clip-text text-transparent mb-2">
                   4
                 </div>
                 <div className="text-xs sm:text-sm text-muted-foreground font-medium">Battle Groups</div>
               </div>
-              <div className="text-center p-4 sm:p-6 bg-card rounded-2xl border border-border hover:shadow-lg transition-shadow duration-200">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-transparent mb-2">
+              <div className="text-center p-4 sm:p-6 bg-emerald-100 rounded-2xl border border-emerald-200 hover:shadow-xl transition-shadow duration-200">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-amber-500 to-emerald-400 bg-clip-text text-transparent mb-2">
                   3
                 </div>
                 <div className="text-xs sm:text-sm text-muted-foreground font-medium">Intense Rounds</div>
               </div>
-              <div className="text-center p-4 sm:p-6 bg-card rounded-2xl border border-border hover:shadow-lg transition-shadow duration-200">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-chart-2 bg-clip-text text-transparent mb-2">
+              <div className="text-center p-4 sm:p-6 bg-gradient-to-r from-amber-200 to-sky-100 rounded-2xl border border-amber-300 hover:shadow-xl transition-shadow duration-200">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-amber-500 to-emerald-400 bg-clip-text text-transparent mb-2">
                   30
                 </div>
                 <div className="text-xs sm:text-sm text-muted-foreground font-medium">Total Questions</div>
@@ -197,7 +197,7 @@ export default function HomePage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             
-            <Card className="p-6 sm:p-8 bg-card border border-border hover:shadow-lg transition-shadow duration-200">
+            <Card className="p-6 sm:p-8 bg-white/95 border border-gray-100 hover:shadow-lg transition-shadow duration-200">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary rounded-2xl flex items-center justify-center">
                   <Brain className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" />
@@ -225,7 +225,7 @@ export default function HomePage() {
               </div>
             </Card>
 
-            <Card className="p-6 sm:p-8 bg-card border border-border hover:shadow-lg transition-shadow duration-200">
+            <Card className="p-6 sm:p-8 bg-white/95 border border-gray-100 hover:shadow-lg transition-shadow duration-200">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary rounded-2xl flex items-center justify-center">
                   <div className="flex gap-1">
@@ -256,7 +256,7 @@ export default function HomePage() {
               </div>
             </Card>
 
-            <Card className="p-6 sm:p-8 bg-card border border-border hover:shadow-lg transition-shadow duration-200 sm:col-span-2 lg:col-span-1">
+            <Card className="p-6 sm:p-8 bg-white/95 border border-gray-100 hover:shadow-lg transition-shadow duration-200 sm:col-span-2 lg:col-span-1">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary rounded-2xl flex items-center justify-center">
                   <Target className="w-6 h-6 sm:w-7 sm:h-7 text-primary-foreground" />
@@ -317,19 +317,26 @@ export default function HomePage() {
                 className={`p-6 sm:p-8 ${group.color} border-2 hover:shadow-lg transition-shadow duration-200`}
               >
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 bg-primary rounded-2xl flex items-center justify-center text-xl sm:text-2xl">
-                    {group.icon}
-                  </div>
+                    <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center text-xl sm:text-2xl ${
+                      group.name === "Alpha" ? "bg-red-50 text-red-600" : group.name === "Beta" ? "bg-blue-50 text-blue-600" : group.name === "Gamma" ? "bg-green-50 text-green-600" : "bg-purple-50 text-purple-600"
+                    }`}>
+                      {group.icon}
+                    </div>
                   <div>
                     <h3 className="text-lg sm:text-xl font-bold text-card-foreground">Group {group.name}</h3>
                     <p className="text-muted-foreground text-xs sm:text-sm">4 Teams Battle</p>
                   </div>
                 </div>
-                <div className="space-y-3">
-                  {["Alpha", "Beta", "Gamma", "Delta"].map((school) => (
+                    <div className="space-y-3">
+                  {[
+                    "Alpha",
+                    "Beta",
+                    "Gamma",
+                    "Delta",
+                  ].map((school) => (
                     <div
                       key={school}
-                      className="flex items-center justify-between p-3 sm:p-4 bg-white/50 rounded-xl hover:bg-white/80 transition-colors duration-200"
+                      className="flex items-center justify-between p-3 sm:p-4 bg-white/60 rounded-xl hover:bg-white/80 transition-colors duration-200"
                     >
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
@@ -362,10 +369,6 @@ export default function HomePage() {
                 all rounds advances to the championship finals. May the smartest minds prevail!
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                <Button variant="outline" size="lg" className="font-semibold hover:bg-primary/5 bg-transparent">
-                  <Trophy className="w-5 h-5 mr-2" />
-                  View Tournament Bracket
-                </Button>
                 <Button
                   size="lg"
                   className="font-semibold bg-primary text-primary-foreground hover:bg-primary/90"
