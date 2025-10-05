@@ -68,6 +68,8 @@ export default function QuizPage() {
     leader?: { name: string; score: number }
   } | null>(null)
   const [selectedOptionIndex, setSelectedOptionIndex] = useState<number | null>(null)
+  // transient per-team delta for the current question (not persisted)
+  const [tempDeltas, setTempDeltas] = useState<Record<string, number>>({})
 
   useEffect(() => {
     let interval: NodeJS.Timeout
@@ -145,6 +147,12 @@ export default function QuizPage() {
     // stop timer when switching questions
     setIsTimerRunning(false)
   }, [quizState])
+
+  // Reset transient per-question deltas whenever the current question or group changes
+  const currentQuestionNumber = quizState?.groups.find((g) => g.groupId === quizState.currentGroup)?.currentQuestion
+  useEffect(() => {
+    setTempDeltas({})
+  }, [quizState?.currentGroup, currentQuestionNumber])
 
   // Keyboard support for MCQ options (a,b,c,d)
   useEffect(() => {
@@ -688,164 +696,173 @@ export default function QuizPage() {
                   </h1>
                   <p className="text-muted-foreground">{roundName}</p>
                 </div>
-                <Badge variant="secondary" className="text-lg px-4 py-2 bg-amber-100 text-amber-700">
-                  Question {currentGroup.currentQuestion + 1} of {totalQuestions}
-                  {isLastQuestion() && <span className="ml-2 text-destructive">FINAL</span>}
-                </Badge>
+                <div className="flex items-center gap-3">
+                  {currentGroup.currentRound === 1 && (currentQuestionData as MCQQuestion)?.section && (
+                    <Badge className="text-sm px-4 py-3 bg-sky-100 text-sky-800">{(currentQuestionData as MCQQuestion).section}</Badge>
+                  )}
+                  <Badge variant="secondary" className="text-lg px-4 py-2 bg-amber-100 text-amber-700">
+                    Question {currentGroup.currentQuestion + 1} of {totalQuestions}
+                    {isLastQuestion() && <span className="ml-2 text-destructive">FINAL</span>}
+                  </Badge>
+                  {/* Show section tag for Round 1 MCQs (Science/Commerce/Arts) */}
+                  
+                </div>
               </div>
 
               <Progress value={progress} className="h-2 mb-4" />
 
-              {/* Timer */}
-              <div className="flex items-center justify-center mb-6">
-                <div
-                  className={`text-6xl font-bold ${
-                    timer <= 10 ? "text-red-600" : "text-amber-600"
-                  } transition-colors duration-200`}
-                >
-                  <Timer className="w-8 h-8 inline mr-2 text-amber-600" />
-                  {timer}s
+              {/* Responsive layout: timer left, question center (stacks on small screens) */}
+              <div className="flex flex-col lg:flex-row gap-6">
+                <div className="lg:w-1/4">
+                  <Card className="p-6 bg-white/95 border border-amber-100 shadow-sm">
+                    <div className="flex flex-col items-center">
+                      <div className={`text-4xl font-bold ${timer <= 10 ? "text-red-600" : "text-amber-600"} transition-colors duration-200`}>
+                        <Timer className="w-6 h-6 inline mr-2 text-amber-600" />
+                        {timer}s
+                      </div>
+
+                      <div className="flex flex-col mt-4 gap-3 w-full">
+                        <Button
+                          onClick={startTimer}
+                          disabled={isTimerRunning}
+                          className="w-full hover:bg-amber-600 bg-amber-500 text-white transition-all duration-200 hover:scale-105 shadow-sm"
+                        >
+                          <Play className="w-4 h-4 mr-2 inline" /> Start
+                        </Button>
+
+                        <Button
+                          variant="outline"
+                          onClick={stopTimer}
+                          disabled={!isTimerRunning}
+                          className="w-full hover:bg-muted transition-all duration-200 hover:scale-105 bg-transparent"
+                        >
+                          <Pause className="w-4 h-4 mr-2 inline" /> Stop
+                        </Button>
+
+                        <Button
+                          variant="outline"
+                          onClick={resetTimer}
+                          className="w-full hover:bg-muted transition-all duration-200 hover:scale-105 bg-transparent"
+                        >
+                          <RotateCcw className="w-4 h-4 mr-2 inline" /> Reset
+                        </Button>
+                      </div>
+                    </div>
+                  </Card>
                 </div>
-              </div>
 
-              {/* Timer Controls */}
-              <div className="flex justify-center gap-4 mb-6">
-                <Button
-                  onClick={startTimer}
-                  disabled={isTimerRunning}
-                  className="hover:bg-amber-600 bg-amber-500 text-white transition-all duration-200 hover:scale-105 shadow-sm"
-                >
-                  <Play className="w-4 h-4 mr-2" />
-                  Start Timer
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={stopTimer}
-                  disabled={!isTimerRunning}
-                  className="hover:bg-muted transition-all duration-200 hover:scale-105 bg-transparent"
-                >
-                  <Pause className="w-4 h-4 mr-2" />
-                  Stop Timer
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={resetTimer}
-                  className="hover:bg-muted transition-all duration-200 hover:scale-105 bg-transparent"
-                >
-                  <RotateCcw className="w-4 h-4 mr-2" />
-                  Reset Timer
-                </Button>
-              </div>
-            </Card>
+                <div className="flex-1">
+                  {/* Question Display */}
+                  <Card className="p-8 bg-white/95 border border-amber-100 shadow-sm">
+                    <div className="text-center mb-8">
+                      <Button
+                        size="lg"
+                        onClick={handleShowQuestion}
+                        disabled={showQuestion}
+                        className="text-lg px-8 py-4 hover:bg-primary/90 transition-all duration-200 hover:scale-105"
+                      >
+                        {showQuestion ? (
+                          <>
+                            <Eye className="w-5 h-5 mr-2" />
+                            Question Shown
+                          </>
+                        ) : (
+                          <>
+                            <EyeOff className="w-5 h-5 mr-2" />
+                            Show Question
+                          </>
+                        )}
+                      </Button>
+                    </div>
 
-            {/* Question Display */}
-            <Card className="p-8 bg-white/95 border border-amber-100 shadow-sm">
-              <div className="text-center mb-8">
-                <Button
-                  size="lg"
-                  onClick={handleShowQuestion}
-                  disabled={showQuestion}
-                  className="text-lg px-8 py-4 hover:bg-primary/90 transition-all duration-200 hover:scale-105"
-                >
-                  {showQuestion ? (
-                    <>
-                      <Eye className="w-5 h-5 mr-2" />
-                      Question Shown
-                    </>
-                  ) : (
-                    <>
-                      <EyeOff className="w-5 h-5 mr-2" />
-                      Show Question
-                    </>
-                  )}
-                </Button>
-              </div>
+                    {showQuestion && currentQuestionData && (
+                      <div className="space-y-6">
+                        {/* Question */}
+                        <div className="text-center">
+                          <h2 className="text-2xl font-bold text-amber-700 mb-6 leading-relaxed">
+                            {currentQuestionData.question}
+                          </h2>
 
-              {showQuestion && currentQuestionData && (
-                <div className="space-y-6">
-                  {/* Question */}
-                  <div className="text-center">
-                    <h2 className="text-2xl font-bold text-amber-700 mb-6 leading-relaxed">
-                      {currentQuestionData.question}
-                    </h2>
+                          {/* Recognition Question Media (image or sound) */}
+                          {currentGroup.currentRound === 2 &&
+                            "type" in currentQuestionData &&
+                            currentQuestionData.url &&
+                            currentQuestionData.url.trim() !== "" && (
+                              <div className="mb-6">
+                                {currentQuestionData.type === "image" ? (
+                                  <div className="flex justify-center">
+                                    {/* eslint-disable-next-line @next/next/no-img-element -- dynamic external assets used as-is */}
+                                    <img
+                                      src={currentQuestionData.url}
+                                      alt={currentQuestionData.question}
+                                      className="w-64 h-64 object-contain rounded-lg border border-amber-100 shadow-sm"
+                                    />
+                                  </div>
+                                ) : currentQuestionData.type === "sound" ? (
+                                  <div className="flex justify-center">
+                                    <audio controls className="w-64">
+                                      <source src={currentQuestionData.url} type="audio/mpeg" />
+                                      Your browser does not support the audio element.
+                                    </audio>
+                                  </div>
+                                ) : null}
+                              </div>
+                            )}
 
-                    {/* Recognition Question Media (image or sound) */}
-                    {currentGroup.currentRound === 2 &&
-                      "type" in currentQuestionData &&
-                      currentQuestionData.url &&
-                      currentQuestionData.url.trim() !== "" && (
-                        <div className="mb-6">
-                          {currentQuestionData.type === "image" ? (
-                            <div className="flex justify-center">
-                              {/* eslint-disable-next-line @next/next/no-img-element -- dynamic external assets used as-is */}
-                              <img
-                                src={currentQuestionData.url}
-                                alt={currentQuestionData.question}
-                                className="w-64 h-64 object-contain rounded-lg border border-amber-100 shadow-sm"
-                              />
+                          {/* MCQ Options */}
+                          {"options" in currentQuestionData && (
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+                              {currentQuestionData.options.map((option, index) => {
+                                const correctIndex = getCorrectOptionIndex(currentQuestionData.answer as string)
+                                const isSelected = selectedOptionIndex === index
+                                const isCorrect = isSelected && correctIndex === index
+                                const isWrong = isSelected && correctIndex !== index
+                                return (
+                                  <button
+                                    key={index}
+                                    onClick={() => handleOptionSelect(index)}
+                                    className={`p-4 rounded-lg text-left font-medium text-lg transition-colors focus:outline-none flex items-start gap-3 ${
+                                      isCorrect
+                                        ? "bg-emerald-500 text-white"
+                                        : isWrong
+                                          ? "bg-red-500 text-white"
+                                          : "bg-amber-50 hover:bg-amber-100"
+                                    }`}
+                                  >
+                                    <span className="font-bold text-amber-700 mr-3">{String.fromCharCode(65 + index)}.</span>
+                                    <span>{option}</span>
+                                  </button>
+                                )
+                              })}
                             </div>
-                          ) : currentQuestionData.type === "sound" ? (
-                            <div className="flex justify-center">
-                              <audio controls className="w-64">
-                                <source src={currentQuestionData.url} type="audio/mpeg" />
-                                Your browser does not support the audio element.
-                              </audio>
-                            </div>
-                          ) : null}
+                          )}
                         </div>
-                      )}
 
-                    {/* MCQ Options */}
-                    {"options" in currentQuestionData && (
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-                        {currentQuestionData.options.map((option, index) => {
-                          const correctIndex = getCorrectOptionIndex(currentQuestionData.answer as string)
-                          const isSelected = selectedOptionIndex === index
-                          const isCorrect = isSelected && correctIndex === index
-                          const isWrong = isSelected && correctIndex !== index
-                          return (
-                            <button
-                              key={index}
-                              onClick={() => handleOptionSelect(index)}
-                              className={`p-4 rounded-lg text-left font-medium text-lg transition-colors focus:outline-none flex items-start gap-3 ${
-                                isCorrect
-                                  ? "bg-emerald-500 text-white"
-                                  : isWrong
-                                    ? "bg-red-500 text-white"
-                                    : "bg-amber-50 hover:bg-amber-100"
-                              }`}
-                            >
-                              <span className="font-bold text-amber-700 mr-3">{String.fromCharCode(65 + index)}.</span>
-                              <span>{option}</span>
-                            </button>
-                          )
-                        })}
+                        {/* Show Answer Button */}
+                        <div className="text-center">
+                          <Button
+                            size="lg"
+                            variant="outline"
+                            onClick={handleShowAnswer}
+                            disabled={showAnswer}
+                            className="text-lg px-8 py-4 bg-transparent hover:bg-muted transition-all duration-200 hover:scale-105"
+                          >
+                            {showAnswer ? "Answer Shown" : "Show Answer"}
+                          </Button>
+                        </div>
+
+                        {/* Answer Display */}
+                        {showAnswer && (
+                          <div className="text-center p-6 bg-primary/10 rounded-lg border border-primary/20">
+                            <h3 className="text-xl font-bold text-primary mb-2">Correct Answer:</h3>
+                            <p className="text-2xl font-bold text-foreground">{currentQuestionData.answer}</p>
+                          </div>
+                        )}
                       </div>
                     )}
-                  </div>
-
-                  {/* Show Answer Button */}
-                  <div className="text-center">
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      onClick={handleShowAnswer}
-                      disabled={showAnswer}
-                      className="text-lg px-8 py-4 bg-transparent hover:bg-muted transition-all duration-200 hover:scale-105"
-                    >
-                      {showAnswer ? "Answer Shown" : "Show Answer"}
-                    </Button>
-                  </div>
-
-                  {/* Answer Display */}
-                  {showAnswer && (
-                    <div className="text-center p-6 bg-primary/10 rounded-lg border border-primary/20">
-                      <h3 className="text-xl font-bold text-primary mb-2">Correct Answer:</h3>
-                      <p className="text-2xl font-bold text-foreground">{currentQuestionData.answer}</p>
-                    </div>
-                  )}
+                  </Card>
                 </div>
-              )}
+              </div>
             </Card>
 
             {/* Navigation Controls */}
@@ -880,54 +897,7 @@ export default function QuizPage() {
 
           {/* Sidebar - Team Scoring */}
           <div className="space-y-6">
-            <Card className="p-6 bg-white/95 border border-amber-100 shadow-sm">
-              <h3 className="text-lg font-bold text-foreground mb-4 flex items-center">
-                <Users className="w-5 h-5 mr-2" />
-                Team Scoring
-              </h3>
-              <div className="space-y-3">
-                {currentGroup.teams.map((team) => {
-                  return (
-                    <div key={team.teamName} className="space-y-2">
-                          <div className="flex gap-2 items-center">
-                            <div className="flex-1">
-                              <div className="font-semibold">{team.schoolName || team.teamName}</div>
-                              <div className="text-xs text-muted-foreground">Click to award points</div>
-                            </div>
-
-                            <div className="flex gap-2">
-                              <Button
-                                size="sm"
-                                onClick={() => addTeamScore(quizState.currentGroup, team.teamName, currentGroup.currentRound, 1)}
-                                className="bg-amber-500 text-white hover:bg-amber-600 shadow-sm"
-                              >
-                                +
-                              </Button>
-
-                              <Button
-                                size="sm"
-                                variant="outline"
-                                onClick={() => addTeamScore(quizState.currentGroup, team.teamName, currentGroup.currentRound, -1)}
-                                className="border-amber-200 text-amber-700 hover:bg-amber-50"
-                              >
-                                −
-                              </Button>
-
-                              <Button
-                                variant="ghost"
-                                size="sm"
-                                onClick={() => revokeTeamScore(quizState.currentGroup, team.teamName, currentGroup.currentRound)}
-                                className="text-red-500"
-                              >
-                                <Minus className="w-4 h-4" />
-                              </Button>
-                            </div>
-                          </div>
-                    </div>
-                  )
-                })}
-              </div>
-            </Card>
+            {/* Team scoring buttons merged into leaderboard below - duplicate card removed */}
 
             {/* Current Scores */}
             <Card className="p-6">
@@ -939,10 +909,10 @@ export default function QuizPage() {
                 {currentGroup.teams
                   .sort((a, b) => b.totalScore - a.totalScore)
                   .map((team, index) => (
-                    <div key={team.teamName} className="flex items-center justify-between p-3 bg-muted rounded-lg">
-                      <div className="flex items-center gap-3">
+                    <div key={team.teamName} className="flex items-start justify-between p-4 bg-muted rounded-lg min-h-[76px]">
+                      <div className="flex items-start gap-3 min-w-0 w-full">
                         <div
-                          className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                          className={`w-9 h-9 flex items-center justify-center rounded-full text-sm font-bold flex-shrink-0 ${
                             index === 0
                               ? "bg-yellow-500 text-white"
                               : index === 1
@@ -954,12 +924,43 @@ export default function QuizPage() {
                         >
                           {index + 1}
                         </div>
-                        <span className="font-semibold">{team.schoolName || team.teamName}</span>
-                      </div>
-                      <div className="text-right">
-                        <div className="font-bold text-lg">{team.totalScore}</div>
-                        <div className="text-xs text-muted-foreground">
-                          R1: {team.round1Score} • R2: {team.round2Score} • R3: {team.round3Score}
+
+                        <div className="min-w-0 w-full">
+                          {/* Controls moved above the name (compact row) */}
+                          <div className="flex items-center gap-2 mb-2">
+                            <button
+                              onClick={() => {
+                                if (!quizState) return
+                                addTeamScore(quizState.currentGroup, team.teamName, currentGroup.currentRound, 1)
+                                setTempDeltas((s) => ({ ...s, [team.teamName]: (s[team.teamName] || 0) + 1 }))
+                              }}
+                              className="w-8 h-8 rounded-md bg-amber-500 text-white flex items-center justify-center text-sm"
+                              aria-label={`Add point to ${team.teamName}`}
+                            >
+                              +
+                            </button>
+
+                            <div className="px-2 text-sm font-semibold">{tempDeltas[team.teamName] ?? 0}</div>
+
+                            <button
+                              onClick={() => {
+                                if (!quizState) return
+                                revokeTeamScore(quizState.currentGroup, team.teamName, currentGroup.currentRound)
+                                setTempDeltas((s) => ({ ...s, [team.teamName]: (s[team.teamName] || 0) - 1 }))
+                              }}
+                              className="w-8 h-8 rounded-md border border-amber-200 flex items-center justify-center text-sm"
+                              aria-label={`Remove point from ${team.teamName}`}
+                            >
+                              −
+                            </button>
+                          </div>
+
+                          <div className="flex items-center justify-between">
+                            <div className="font-semibold truncate">{team.schoolName || team.teamName}</div>
+                            <div className="text-sm text-foreground font-bold ml-4">{team.totalScore}</div>
+                          </div>
+
+                          <div className="text-xs text-muted-foreground truncate mt-1">R1: {team.round1Score} • R2: {team.round2Score} • R3: {team.round3Score}</div>
                         </div>
                       </div>
                     </div>

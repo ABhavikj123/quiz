@@ -2,6 +2,7 @@ export interface MCQQuestion {
   question: string
   options: string[]
   answer: string
+  section?: "Science" | "Commerce" | "Arts"
 }
 
 export interface RecognitionQuestion {

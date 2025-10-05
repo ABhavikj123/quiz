@@ -59,7 +59,9 @@ const flattenQuizData = (rawData: RawQuiz): QuizData => {
           // Flatten Round 1 sections (Science, Commerce, Arts)
           const sections = round.sections as RawRoundSection<RawMCQQuestion>[]
           sections.forEach((section) => {
-            rounds.round1_mcq.push(...section.questions)
+            // attach section name to each question so UI can show tags
+            const tagged = section.questions.map((q) => ({ ...q, section: (section.section as "Science" | "Commerce" | "Arts") }))
+            rounds.round1_mcq.push(...tagged)
           })
         } else if (round.round_number === 2) {
           // Flatten Round 2 sections (Image, Audio) and transform media_type/media_link to type/url

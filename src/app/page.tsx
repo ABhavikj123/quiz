@@ -68,7 +68,7 @@ export default function HomePage() {
                   height={48}
                   className="h-10 w-10 sm:h-12 sm:w-12 object-contain"
                 />
-                <div className="text-lg sm:text-xl font-bold text-amber-900">Pacific University</div>
+                <div className="text-lg sm:text-xl font-bold text-amber-900">Pacific Academy of Higher Education And Research University</div>
             </div>
 
             {/* Desktop Navigation */}
