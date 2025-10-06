@@ -5,17 +5,9 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog"
+
 import Announce from "@/components/announce"
 import {
   Play,
@@ -27,10 +19,6 @@ import {
   RotateCcw,
   Home,
   Timer,
-  Users,
-  Trophy,
-  Minus,
-  Settings,
   Crown,
 } from "lucide-react"
 import { useQuiz } from "@/hooks/use-quiz"
@@ -42,15 +30,11 @@ export default function QuizPage() {
     quizData,
     gameOverModal,
     resetQuiz,
-    resetGroup,
-    addTeamScore,
-    revokeTeamScore,
     nextQuestion,
     previousQuestion,
     switchGroup,
     startGroup,
     startFinal,
-    updateTeamName,
     closeGameOverModal,
   } = useQuiz()
 
@@ -58,8 +42,7 @@ export default function QuizPage() {
   const [isTimerRunning, setIsTimerRunning] = useState(false)
   const [showAnswer, setShowAnswer] = useState(false)
   const [showQuestion, setShowQuestion] = useState(false)
-  const [showTeamSetup, setShowTeamSetup] = useState(false)
-  // teamNames removed (not used) - school names are stored in quiz state
+ 
   const [selectedGroup, setSelectedGroup] = useState<string>("")
   const [roundStartModal, setRoundStartModal] = useState<{
     show: boolean
@@ -269,7 +252,7 @@ export default function QuizPage() {
     resetTimer()
   }
 
-  // Direct calls to addTeamScore/revokeTeamScore are used in the UI; helper wrappers removed to avoid unused-var warnings.
+
 
   const handleStartGroup = () => {
     if (!selectedGroup) return
@@ -289,10 +272,7 @@ export default function QuizPage() {
     resetTimer()
   }
 
-  const handleUpdateTeamName = (teamName: string, schoolName: string) => {
-    if (!quizState) return
-    updateTeamName(quizState.currentGroup, teamName, schoolName)
-  }
+  
 
 
 
@@ -347,9 +327,8 @@ export default function QuizPage() {
   }
 
   const currentGroup = quizState.groups.find((g) => g.groupId === quizState.currentGroup)
-  // ...existing code...
 
-  
+
 
   if (!currentGroup && quizState.currentGroup) {
     return (
@@ -362,7 +341,6 @@ export default function QuizPage() {
     )
   }
 
-  // final-round UI removed; continue to group-based views
 
   if (!currentGroup) {
     return (
@@ -374,7 +352,7 @@ export default function QuizPage() {
           <div className="space-y-4">
             <Select value={selectedGroup} onValueChange={setSelectedGroup}>
               <SelectTrigger className="w-64 mx-auto bg-amber-50">
-                <SelectValue placeholder="Select Group"  />
+                <SelectValue placeholder="Select Group" />
               </SelectTrigger>
               <SelectContent>
                 {quizData.groups.map((g) => {
@@ -501,15 +479,10 @@ export default function QuizPage() {
           <div>
             Group {roundStartModal?.groupId} - {roundStartModal?.round === 0 ? "Final Round" : `Round ${roundStartModal?.round}`} is about to begin!
           </div>
-          {roundStartModal?.leader && (
-            <div className="mt-2">
-              Current leader: <span className="font-bold">{roundStartModal.leader.name}</span> with {roundStartModal.leader.score} points
-            </div>
-          )}
         </div>
       </Announce>
 
-  <header className="sticky top-0 z-50 bg-amber-200/90 backdrop-blur-md border-b border-amber-300 shadow-md">
+      <header className="sticky top-0 z-50 bg-amber-200/90 backdrop-blur-md border-b border-amber-300 shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-4">
@@ -580,17 +553,7 @@ export default function QuizPage() {
                 )}
               </div>
 
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => setShowTeamSetup(true)}
-                className="hover:bg-muted transition-all duration-200 hover:scale-105"
-              >
-                <Settings className="w-4 h-4 mr-2" />
-                Team Setup
-              </Button>
 
-              {/* Final Round button: reuse existing group start/switch logic. */}
               <Button
                 variant="outline"
                 size="sm"
@@ -613,15 +576,7 @@ export default function QuizPage() {
                 Final
               </Button>
 
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => resetGroup(quizState?.currentGroup || 1)}
-                className="hover:bg-amber-100 transition-all duration-200 hover:scale-105"
-              >
-                <RotateCcw className="w-4 h-4 mr-2 text-amber-600" />
-                Reset Group
-              </Button>
+              
               <Button
                 variant="outline"
                 size="sm"
@@ -635,44 +590,12 @@ export default function QuizPage() {
           </div>
         </div>
       </header>
+     
 
-      <Dialog open={showTeamSetup} onOpenChange={setShowTeamSetup}>
-        <DialogContent className="sm:max-w-lg">
-          <DialogHeader>
-            <DialogTitle>Team Setup - Group {quizState?.currentGroup}</DialogTitle>
-            <DialogDescription>Add school/college names for each team</DialogDescription>
-          </DialogHeader>
-          <div className="space-y-4">
-            {currentGroup?.teams.map((team) => (
-              <div key={team.teamName} className="space-y-2">
-                <Label htmlFor={team.teamName}>{team.teamName}</Label>
-                <Input
-                  id={team.teamName}
-                  placeholder="Enter school/college name"
-                  value={team.schoolName || ""}
-                  onChange={(e) => handleUpdateTeamName(team.teamName, e.target.value)}
-                  className="hover:border-primary/50 transition-colors duration-200"
-                />
-              </div>
-            ))}
-          </div>
-          <DialogFooter>
-            <Button
-              onClick={() => setShowTeamSetup(false)}
-              className="hover:bg-primary/90 transition-colors duration-200"
-            >
-              Done
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
-
-      {/* final round modal removed; final round UI is rendered inline when isFinalRound is true */}
-
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Main Quiz Area */}
-          <div className="lg:col-span-3 space-y-6">
+          <div className="lg:col-span-4 space-y-6">
             {currentGroup.currentQuestion === 0 && (
               <Card className="p-6 bg-amber-100/60 border-amber-200">
                 <div className="text-center">
@@ -704,8 +627,7 @@ export default function QuizPage() {
                     Question {currentGroup.currentQuestion + 1} of {totalQuestions}
                     {isLastQuestion() && <span className="ml-2 text-destructive">FINAL</span>}
                   </Badge>
-                  {/* Show section tag for Round 1 MCQs (Science/Commerce/Arts) */}
-                  
+
                 </div>
               </div>
 
@@ -791,7 +713,7 @@ export default function QuizPage() {
                               <div className="mb-6">
                                 {currentQuestionData.type === "image" ? (
                                   <div className="flex justify-center">
-                                    {/* eslint-disable-next-line @next/next/no-img-element -- dynamic external assets used as-is */}
+                                   
                                     <img
                                       src={currentQuestionData.url}
                                       alt={currentQuestionData.question}
@@ -821,13 +743,12 @@ export default function QuizPage() {
                                   <button
                                     key={index}
                                     onClick={() => handleOptionSelect(index)}
-                                    className={`p-4 rounded-lg text-left font-medium text-lg transition-colors focus:outline-none flex items-start gap-3 ${
-                                      isCorrect
+                                    className={`p-4 rounded-lg text-left font-medium text-lg transition-colors focus:outline-none flex items-start gap-3 ${isCorrect
                                         ? "bg-emerald-500 text-white"
                                         : isWrong
                                           ? "bg-red-500 text-white"
                                           : "bg-amber-50 hover:bg-amber-100"
-                                    }`}
+                                      }`}
                                   >
                                     <span className="font-bold text-amber-700 mr-3">{String.fromCharCode(65 + index)}.</span>
                                     <span>{option}</span>
@@ -895,110 +816,6 @@ export default function QuizPage() {
             </Card>
           </div>
 
-          {/* Sidebar - Team Scoring */}
-          <div className="space-y-6">
-            {/* Team scoring buttons merged into leaderboard below - duplicate card removed */}
-
-            {/* Current Scores */}
-            <Card className="p-6">
-              <h3 className="text-lg font-bold text-foreground mb-4 flex items-center">
-                <Trophy className="w-5 h-5 mr-2" />
-                Current Scores
-              </h3>
-              <div className="space-y-3">
-                {currentGroup.teams
-                  .sort((a, b) => b.totalScore - a.totalScore)
-                  .map((team, index) => (
-                    <div key={team.teamName} className="flex items-start justify-between p-4 bg-muted rounded-lg min-h-[76px]">
-                      <div className="flex items-start gap-3 min-w-0 w-full">
-                        <div
-                          className={`w-9 h-9 flex items-center justify-center rounded-full text-sm font-bold flex-shrink-0 ${
-                            index === 0
-                              ? "bg-yellow-500 text-white"
-                              : index === 1
-                                ? "bg-gray-400 text-white"
-                                : index === 2
-                                  ? "bg-orange-600 text-white"
-                                  : "bg-muted-foreground text-white"
-                          }`}
-                        >
-                          {index + 1}
-                        </div>
-
-                        <div className="min-w-0 w-full">
-                          {/* Controls moved above the name (compact row) */}
-                          <div className="flex items-center gap-2 mb-2">
-                            <button
-                              onClick={() => {
-                                if (!quizState) return
-                                addTeamScore(quizState.currentGroup, team.teamName, currentGroup.currentRound, 1)
-                                setTempDeltas((s) => ({ ...s, [team.teamName]: (s[team.teamName] || 0) + 1 }))
-                              }}
-                              className="w-8 h-8 rounded-md bg-amber-500 text-white flex items-center justify-center text-sm"
-                              aria-label={`Add point to ${team.teamName}`}
-                            >
-                              +
-                            </button>
-
-                            <div className="px-2 text-sm font-semibold">{tempDeltas[team.teamName] ?? 0}</div>
-
-                            <button
-                              onClick={() => {
-                                if (!quizState) return
-                                revokeTeamScore(quizState.currentGroup, team.teamName, currentGroup.currentRound)
-                                setTempDeltas((s) => ({ ...s, [team.teamName]: (s[team.teamName] || 0) - 1 }))
-                              }}
-                              className="w-8 h-8 rounded-md border border-amber-200 flex items-center justify-center text-sm"
-                              aria-label={`Remove point from ${team.teamName}`}
-                            >
-                              −
-                            </button>
-                          </div>
-
-                          <div className="flex items-center justify-between">
-                            <div className="font-semibold truncate">{team.schoolName || team.teamName}</div>
-                            <div className="text-sm text-foreground font-bold ml-4">{team.totalScore}</div>
-                          </div>
-
-                          <div className="text-xs text-muted-foreground truncate mt-1">R1: {team.round1Score} • R2: {team.round2Score} • R3: {team.round3Score}</div>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-              </div>
-            </Card>
-
-            {/* Round Progress */}
-            <Card className="p-6">
-              <h3 className="text-lg font-bold text-foreground mb-4">Round Progress</h3>
-              <div className="space-y-4">
-                {[1, 2, 3].map((round) => (
-                  <div key={round} className="flex items-center justify-between">
-                    <span
-                      className={`font-medium ${currentGroup.currentRound === round ? "text-primary" : "text-muted-foreground"}`}
-                    >
-                      Round {round}
-                    </span>
-                    <Badge
-                      variant={
-                        currentGroup.currentRound > round
-                          ? "default"
-                          : currentGroup.currentRound === round
-                            ? "secondary"
-                            : "outline"
-                      }
-                    >
-                      {currentGroup.currentRound > round
-                        ? "Completed"
-                        : currentGroup.currentRound === round
-                          ? "In Progress"
-                          : "Pending"}
-                    </Badge>
-                  </div>
-                ))}
-              </div>
-            </Card>
-          </div>
         </div>
       </div>
     </div>
