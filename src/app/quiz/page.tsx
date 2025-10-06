@@ -307,13 +307,7 @@ export default function QuizPage() {
     setSelectedGroup("")
   }
 
-  const getCurrentLeader = () => {
-    if (!quizState) return null
-    const currentGroup = quizState.groups.find((g) => g.groupId === quizState.currentGroup)
-    if (!currentGroup) return null
-
-    return currentGroup.teams.reduce((prev, current) => (prev.totalScore > current.totalScore ? prev : current))
-  }
+  
 
   if (!quizState || !quizData) {
     return (
@@ -567,8 +561,8 @@ export default function QuizPage() {
                   setShowQuestion(false)
                   setShowAnswer(false)
                   resetTimer()
-                  const leader = getCurrentLeader()
-                  setRoundStartModal({ show: true, round: 0, groupId: finalId, leader: leader ? { name: leader.schoolName || leader.teamName, score: leader.totalScore } : undefined })
+                  
+                  setRoundStartModal({ show: true, round: 0, groupId: finalId })
                 }}
                 className="hover:bg-primary/90 transition-all duration-200 hover:scale-105"
               >
@@ -600,12 +594,7 @@ export default function QuizPage() {
               <Card className="p-6 bg-amber-100/60 border-amber-200">
                 <div className="text-center">
                   <h2 className="text-xl font-bold text-amber-700 mb-2">{roundName.startsWith("Final") ? "Starting Final Round" : `Starting Round ${currentGroup.currentRound}`}</h2>
-                  {getCurrentLeader() && (
-                    <p className="text-muted-foreground">
-                      Current leader: <strong>{getCurrentLeader()?.schoolName || getCurrentLeader()?.teamName}</strong>{" "}
-                      with {getCurrentLeader()?.totalScore} points
-                    </p>
-                  )}
+                  
                 </div>
               </Card>
             )}
