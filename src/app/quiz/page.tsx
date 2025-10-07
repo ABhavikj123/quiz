@@ -450,10 +450,6 @@ export default function QuizPage() {
         onClose={handleGameOverClose}
       >
         <div>
-          <div>
-            <span className="font-bold">{gameOverModal?.winner}</span> wins Group {gameOverModal?.groupId} with {" "}
-            <span className="font-bold">{gameOverModal?.score} points</span>!
-          </div>
           <div className="mt-2">
             {quizState && quizState.groupWinners.length < 4 ? (
               <span>Ready to move to the next group?</span>
