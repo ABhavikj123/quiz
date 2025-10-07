@@ -201,7 +201,7 @@
                                 {
                                     "question": "Identify the famous personality.(प्रसिद्ध व्यक्तित्व की पहचान करें।)",
                                     "media_type": "audio",
-                                    "media_link": "./image/amit.mpeg",
+                                    "media_link": "./audio/amit.mpeg",
                                     "answer": "Amit Shah (अमित शाह)"
                                 }
                             ]
@@ -808,11 +808,11 @@
                                 {
                                     "question": "Identify the dance form (नृत्य शैली को पहचानें)",
                                     "media_type": "image",
-                                    "media_link": "./imagge/odissi.webp",
+                                    "media_link": "./image/odissi.webp",
                                     "answer": "Odissi Dance / (ओडिसी नृत्य)"
                                 },
                                 {
-                                    "question": "Identify this World Wonder (इस विश्व के 7 अजूबों की पहचान कीजिए)",
+                                    "question": "Identify this World Wonder (विश्व के इस अजूबे को पहचान कीजिये)",
                                     "media_type": "image",
                                     "media_link": "./image/petra.webp",
                                     "answer": "Petra, Jordan / (पेट्रा, जॉर्डन)"
